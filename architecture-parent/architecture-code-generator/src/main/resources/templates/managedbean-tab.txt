@@ -1,0 +1,21 @@
+package [PACOTE];
+
+[IMPORT]
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+import com.gerador.auxiliar.PadraoMBImpl;
+
+@ViewScoped
+@ManagedBean
+public class [CLASSE_MB] extends PadraoMBImpl<[NOME_CLASSE]> {
+
+	@PostConstruct
+	public void executarIniciar(){
+		executarPesquisar();
+	}
+
+[PREENCHER_COMBO]
+}

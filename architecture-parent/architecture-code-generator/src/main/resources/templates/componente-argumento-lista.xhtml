@@ -1,0 +1,16 @@
+<p:row>
+	<p:column>
+		<p:outputLabel
+			value="#{label['[NOME_MODEL].[LOGICA_TELA].campo.[ATRIBUTO]']}"
+			for="[NOME_MODEL]_[ATRIBUTO]_sel" />
+	</p:column>
+	<p:column>
+		<p:selectManyMenu id="[NOME_MODEL]_[ATRIBUTO]_sel" required="[REQUIRED_SEL]"
+			value="#{[NOME_MB].modelSel.[ATRIBUTO]}" converter="ModelABConverter"
+			var="itemSel" filter="true" filterMatchMode="contains"
+			showCheckbox="true">
+			<f:selectItems value="#{[NOME_MB].list[METODO]}" var="item"
+				itemLabel="#{item.label}" itemValue="#{item}" />
+		</p:selectManyMenu>
+	</p:column>
+</p:row>

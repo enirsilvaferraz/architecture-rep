@@ -1,0 +1,228 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html"
+	template="/resources/templates/template-crud.xhtml">
+
+	<ui:param name="param_titulo" value="#{label['produto.crud.titulo']}" />
+	<ui:param name="padraoMB" value="#{produtoCrudMB}" />
+
+	<ui:define name="define-tabela-padrao">
+
+<p:column headerText="#{label['produto.crud.campo.codigo']}">
+	<p:outputLabel value="#{item.codigo}" />
+</p:column><p:column headerText="#{label['produto.crud.campo.nome']}">
+	<p:outputLabel value="#{item.nome}" />
+</p:column><p:column headerText="#{label['produto.crud.campo.lucro']}">
+	<p:outputLabel value="#{item.lucro}" />
+</p:column><p:column headerText="#{label['produto.crud.campo.valorCusto']}">
+	<p:outputLabel value="#{item.valorCusto}" />
+</p:column><p:column headerText="#{label['produto.crud.campo.valorVenda']}">
+	<p:outputLabel value="#{item.valorVenda}" />
+</p:column><p:column headerText="#{label['produto.crud.campo.categoria']}">
+	<p:outputLabel value="#{item.categoria.label}" />
+</p:column>
+			<p:column headerText="#{label['produto.crud.campo.quantidadeEstoque']}">
+	<p:outputLabel value="#{item.quantidadeEstoque}" />
+</p:column><p:column headerText="#{label['produto.crud.campo.flPreCadastro']}">
+	<p:outputLabel value="#{item.flPreCadastro}" />
+</p:column>
+
+	</ui:define>
+
+	<ui:define name="define-filtros-padrao">
+
+<p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.codigo']}" for="produto_codigo_sel" />
+	</p:column>
+	<p:column>
+		<p:inputText id="produto_codigo_sel" value="#{produtoCrudMB.modelSel.codigo}" maxlength="10" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.nome']}" for="produto_nome_sel" />
+	</p:column>
+	<p:column>
+		<p:inputText id="produto_nome_sel" value="#{produtoCrudMB.modelSel.nome}" maxlength="100" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.lucro']}" for="produto_lucro_sel" />
+	</p:column>
+	<p:column>
+		<p:inputText id="produto_lucro_sel" value="#{produtoCrudMB.modelSel.lucro}" maxlength="10" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.valorCusto']}" for="produto_valorCusto_sel" />
+	</p:column>
+	<p:column>
+		<p:inputText id="produto_valorCusto_sel" value="#{produtoCrudMB.modelSel.valorCusto}" maxlength="10" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.valorVenda']}" for="produto_valorVenda_sel" />
+	</p:column>
+	<p:column>
+		<p:inputText id="produto_valorVenda_sel" value="#{produtoCrudMB.modelSel.valorVenda}" maxlength="10" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.categoria']}" for="produto_categoria_sel" />
+	</p:column>
+	<p:column>
+		<p:selectOneMenu id="produto_categoria_sel" value="#{produtoCrudMB.modelSel.categoria.codigo}" required="false" >
+			<f:selectItem itemLabel="#{label['sistema.select.selecione']}" itemValue="#{null}" />
+			<f:selectItems value="#{produtoCrudMB.listCategoriaModel}" var="item" itemLabel="#{item.label}" 
+				itemValue="#{item.codigo}" />
+		</p:selectOneMenu>
+	</p:column>
+</p:row>
+<p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.quantidadeEstoque']}" for="produto_quantidadeEstoque_sel" />
+	</p:column>
+	<p:column>
+		<p:inputText id="produto_quantidadeEstoque_sel" value="#{produtoCrudMB.modelSel.quantidadeEstoque}" maxlength="10" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.flPreCadastro']}" for="produto_flPreCadastro_sel" />
+	</p:column>
+	<p:column>
+		<p:inputText id="produto_flPreCadastro_sel" value="#{produtoCrudMB.modelSel.flPreCadastro}" maxlength="10" required="false"  />
+	</p:column>
+</p:row>
+
+	</ui:define>
+
+	<ui:define name="define-cadastro-padrao">
+
+<p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.codigo']}" for="produto_codigo_cad" />
+	</p:column>
+	<p:column>
+		<p:inputText id="produto_codigo_cad" value="#{produtoCrudMB.modelCad.codigo}" maxlength="10" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.nome']}" for="produto_nome_cad" />
+	</p:column>
+	<p:column>
+		<p:inputText id="produto_nome_cad" value="#{produtoCrudMB.modelCad.nome}" maxlength="100" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.lucro']}" for="produto_lucro_cad" />
+	</p:column>
+	<p:column>
+		<p:inputText id="produto_lucro_cad" value="#{produtoCrudMB.modelCad.lucro}" maxlength="10" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.valorCusto']}" for="produto_valorCusto_cad" />
+	</p:column>
+	<p:column>
+		<p:inputText id="produto_valorCusto_cad" value="#{produtoCrudMB.modelCad.valorCusto}" maxlength="10" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.valorVenda']}" for="produto_valorVenda_cad" />
+	</p:column>
+	<p:column>
+		<p:inputText id="produto_valorVenda_cad" value="#{produtoCrudMB.modelCad.valorVenda}" maxlength="10" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.categoria']}" for="produto_categoria_cad" />
+	</p:column>
+	<p:column>
+		<p:selectOneMenu id="produto_categoria_cad" value="#{produtoCrudMB.modelCad.categoria.codigo}" required="false" >
+			<f:selectItem itemLabel="#{label['sistema.select.selecione']}" itemValue="#{null}" />
+			<f:selectItems value="#{produtoCrudMB.listCategoriaModel}" var="item" itemLabel="#{item.label}" 
+				itemValue="#{item.codigo}" />
+		</p:selectOneMenu>
+	</p:column>
+</p:row>
+<p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.quantidadeEstoque']}" for="produto_quantidadeEstoque_cad" />
+	</p:column>
+	<p:column>
+		<p:inputText id="produto_quantidadeEstoque_cad" value="#{produtoCrudMB.modelCad.quantidadeEstoque}" maxlength="10" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.flPreCadastro']}" for="produto_flPreCadastro_cad" />
+	</p:column>
+	<p:column>
+		<p:inputText id="produto_flPreCadastro_cad" value="#{produtoCrudMB.modelCad.flPreCadastro}" maxlength="10" required="false"  />
+	</p:column>
+</p:row>
+
+	</ui:define>
+
+	<ui:define name="define-detalhes-padrao">
+
+<p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.codigo']}" for="produto_codigo_det" />
+	</p:column>
+	<p:column>
+		<p:outputLabel id="produto_codigo_det" value="#{produtoCrudMB.modelCad.codigo}"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.nome']}" for="produto_nome_det" />
+	</p:column>
+	<p:column>
+		<p:outputLabel id="produto_nome_det" value="#{produtoCrudMB.modelCad.nome}"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.lucro']}" for="produto_lucro_det" />
+	</p:column>
+	<p:column>
+		<p:outputLabel id="produto_lucro_det" value="#{produtoCrudMB.modelCad.lucro}"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.valorCusto']}" for="produto_valorCusto_det" />
+	</p:column>
+	<p:column>
+		<p:outputLabel id="produto_valorCusto_det" value="#{produtoCrudMB.modelCad.valorCusto}"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.valorVenda']}" for="produto_valorVenda_det" />
+	</p:column>
+	<p:column>
+		<p:outputLabel id="produto_valorVenda_det" value="#{produtoCrudMB.modelCad.valorVenda}"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.categoria']}" for="produto_categoria_det" />
+	</p:column>
+	<p:column>
+		<p:outputLabel id="produto_categoria_det"  value="#{produtoCrudMB.modelCad.categoria.label}" />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.quantidadeEstoque']}" for="produto_quantidadeEstoque_det" />
+	</p:column>
+	<p:column>
+		<p:outputLabel id="produto_quantidadeEstoque_det" value="#{produtoCrudMB.modelCad.quantidadeEstoque}"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['produto.crud.campo.flPreCadastro']}" for="produto_flPreCadastro_det" />
+	</p:column>
+	<p:column>
+		<p:outputLabel id="produto_flPreCadastro_det" value="#{produtoCrudMB.modelCad.flPreCadastro}"  />
+	</p:column>
+</p:row>
+
+	</ui:define>
+
+
+</ui:composition>

@@ -1,0 +1,61 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html"
+	template="/resources/templates/template-crud.xhtml">
+
+	<ui:param name="param_titulo" value="#{label['papel.tab.titulo']}" />
+	<ui:param name="padraoMB" value="#{papelTabMB}" />
+
+	<ui:define name="define-tabela-padrao">
+
+<p:column headerText="#{label['papel.tab.campo.codigo']}">
+	<p:outputLabel value="#{item.codigo}" />
+</p:column><p:column headerText="#{label['papel.tab.campo.nome']}">
+	<p:outputLabel value="#{item.nome}" />
+</p:column>
+
+	</ui:define>
+
+	<ui:define name="define-filtros" />
+
+	<ui:define name="define-cadastro-padrao">
+
+<p:row>
+	<p:column>
+		<p:outputLabel value="#{label['papel.tab.campo.codigo']}" for="papel_codigo_cad" />
+	</p:column>
+	<p:column>
+		<p:inputText id="papel_codigo_cad" value="#{papelTabMB.modelCad.codigo}" maxlength="10" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['papel.tab.campo.nome']}" for="papel_nome_cad" />
+	</p:column>
+	<p:column>
+		<p:inputText id="papel_nome_cad" value="#{papelTabMB.modelCad.nome}" maxlength="100" required="false"  />
+	</p:column>
+</p:row>
+
+	</ui:define>
+
+	<ui:define name="define-detalhes-padrao">
+
+<p:row>
+	<p:column>
+		<p:outputLabel value="#{label['papel.tab.campo.codigo']}" for="papel_codigo_det" />
+	</p:column>
+	<p:column>
+		<p:outputLabel id="papel_codigo_det" value="#{papelTabMB.modelCad.codigo}"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['papel.tab.campo.nome']}" for="papel_nome_det" />
+	</p:column>
+	<p:column>
+		<p:outputLabel id="papel_nome_det" value="#{papelTabMB.modelCad.nome}"  />
+	</p:column>
+</p:row>
+
+	</ui:define>
+
+
+</ui:composition>

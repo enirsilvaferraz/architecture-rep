@@ -1,0 +1,4 @@
+	@SuppressWarnings("unchecked")
+	public List<[NOME_CLASSE_COMBO]> getList[NOME_CLASSE_COMBO](){
+		return (List<[NOME_CLASSE_COMBO]>) montarCombo(new [NOME_CLASSE_COMBO](), null);
+	}

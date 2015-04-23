@@ -1,0 +1,15 @@
+package [PACOTE];
+
+[IMPORT]
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+import com.gerador.auxiliar.PadraoMBImpl;
+
+@ViewScoped
+@ManagedBean
+public class [CLASSE_MB] extends PadraoMBImpl<[NOME_CLASSE]> {
+
+[PREENCHER_COMBO]
+}

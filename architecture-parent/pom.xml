@@ -1,0 +1,182 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sistemas.architecture</groupId>
+	<artifactId>architecture-parent</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- Define o compilador padrão dos projetos -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.2</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+						<compilerVersion>1.7</compilerVersion>
+						<optimize>true</optimize>
+						<showDeprecation>true</showDeprecation>
+						<showWarnings>true</showWarnings>
+						<encoding>${default_encoding}</encoding>
+					</configuration>
+				</plugin>
+
+				<!-- Configurando encode padrão para os Resources -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.7</version>
+					<configuration>
+						<overwrite>true</overwrite>
+						<encoding>${default_encoding}</encoding>
+					</configuration>
+				</plugin>
+
+				<!-- Configurando empacotamento .jar com manifest padrão -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.6</version>
+					<configuration>
+						<verbose>true</verbose>
+						<archive>
+							<addMavenDescriptor>false</addMavenDescriptor>
+							<manifest>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+								<addClasspath>true</addClasspath>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
+
+				<!-- Configurando empacotamento .war com manifest padrão -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.6</version>
+					<configuration>
+						<!-- web.xml is not mandatory since JavaEE 5 -->
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+						<archive>
+							<addMavenDescriptor>false</addMavenDescriptor>
+							<manifest>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+								<addClasspath>true</addClasspath>
+								<classpathPrefix>lib</classpathPrefix>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
+
+				<!-- Configurando empacotamento .ear com manifest padrão -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ear-plugin</artifactId>
+					<version>2.10</version>
+					<configuration>
+						<!-- http://maven.apache.org/plugins/maven-ear-plugin/ -->
+						<version>6</version>
+						<defaultLibBundleDir>lib</defaultLibBundleDir>
+						<generateModuleId>true</generateModuleId>
+						<archive>
+							<addMavenDescriptor>false</addMavenDescriptor>
+							<manifest>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+								<addClasspath>true</addClasspath>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
+
+				<!-- Configurando empacotamento .jar ( ) com manifest padrão -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ejb-plugin</artifactId>
+					<version>2.5</version>
+					<configuration>
+						<!-- http://maven.apache.org/plugins/maven-ejb-plugin/ -->
+						<ejbVersion>3.1</ejbVersion>
+						<generateClient>true</generateClient>
+						<archive>
+							<addMavenDescriptor>false</addMavenDescriptor>
+							<manifest>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+								<addClasspath>true</addClasspath>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
+
+				<!-- Adicionar JavaDoc dos projetos -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.10.2</version>
+					<configuration>
+						<archive>
+							<addMavenDescriptor>false</addMavenDescriptor>
+							<manifest>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+								<addClasspath>true</addClasspath>
+							</manifest>
+						</archive>
+						<encoding>${default_encoding}</encoding>
+					</configuration>
+				</plugin>
+
+
+				<plugin>
+					<groupId>org.jboss.as.plugins</groupId>
+					<artifactId>jboss-as-maven-plugin</artifactId>
+					<version>7.7.Final</version>
+					<executions>
+						<execution>
+							<phase>install</phase>
+							<goals>
+								<goal>deploy</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+
+			</plugins>
+		</pluginManagement>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<modules>
+		<module>architecture-web</module>
+		<module>architecture-ejb</module>
+		<module>architecture-ear</module>
+		<module>architecture-code-generator</module>
+	</modules>
+</project>

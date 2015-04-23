@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html"
+	template="/resources/templates/template-crud.xhtml">
+
+	<ui:param name="param_titulo" value="#{label['[NOME_MODEL].[LOGICA_TELA].titulo']}" />
+	<ui:param name="padraoMB" value="#{[NOME_MB]}" />
+
+	<ui:define name="define-tabela-padrao">
+
+[DATATABLE_COLUMNS]
+
+	</ui:define>
+
+	<ui:define name="define-filtros-padrao">
+
+[ARGUMENTOS]
+
+	</ui:define>
+
+	<ui:define name="define-cadastro-padrao">
+
+[CADASTRO]
+
+	</ui:define>
+
+	<ui:define name="define-detalhes-padrao">
+
+[DETALHES]
+
+	</ui:define>
+
+
+</ui:composition>
