@@ -13,10 +13,23 @@
 
 				<f:facet name="footer">
 					<div align="right">
-						<p:commandButton value="#{label['sistema.botao.pesquisar']}" title="#{label['sistema.botao.pesquisar']}"
-							actionListener="#{padraoMB.executarPesquisar()}" process="panelFiltros" update="dataTable" />
+						<p:commandButton value="#{label['sistema.botao.pesquisar']}" icon="ui-icon-clipboard" title="#{label['sistema.botao.pesquisar']}"
+							actionListener="#{padraoMB.executarPesquisar()}" process="panelFiltros" update="dataTable panelFiltros" />
 					</div>
 				</f:facet>
+			</p:panel>
+			<p:spacer width="100%" height="20" />
+
+		</ui:insert>
+		
+		
+		<ui:insert name="define-comandos">
+
+			<p:panel style="text-align:right">
+				<p:commandButton value="#{label['sistema.botao.incluir']}" title="#{label['sistema.botao.incluir']}"
+					oncomplete="PF('dialogCadastro').show()" process="@this" update="panel_dialog">
+					<f:setPropertyActionListener target="#{padraoMB.modelCad}" value="#{null}" />
+				</p:commandButton>
 			</p:panel>
 
 		</ui:insert>
@@ -98,19 +111,6 @@
 
 		</ui:insert>
 
-
-
-		<ui:insert name="define-comandos">
-
-			<p:panel style="text-align:right">
-				<p:commandButton value="#{label['sistema.botao.incluir']}" title="#{label['sistema.botao.incluir']}"
-					oncomplete="PF('dialogCadastro').show()" process="@this" update="panel_dialog">
-					<f:setPropertyActionListener target="#{padraoMB.modelCad}" value="#{null}" />
-				</p:commandButton>
-			</p:panel>
-			<p:spacer width="100%" height="50" />
-
-		</ui:insert>
 
 	</ui:define>
 

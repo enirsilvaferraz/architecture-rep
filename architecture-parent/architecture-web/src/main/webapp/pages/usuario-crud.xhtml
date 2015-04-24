@@ -20,7 +20,6 @@
 			<p:outputLabel value="#{item.senha}" />
 		</p:column>
 
-
 	</ui:define>
 
 	<ui:define name="define-filtros-padrao">
@@ -33,7 +32,7 @@
 			<p:column>
 				<p:inputText id="usuario_nome_sel"
 					value="#{usuarioCrudMB.modelSel.nome}" maxlength="10"
-					required="false" />
+					required="true" />
 			</p:column>
 		</p:row>
 		<p:row>
@@ -56,27 +55,6 @@
 				<p:inputText id="usuario_senha_sel"
 					value="#{usuarioCrudMB.modelSel.senha}" maxlength="50"
 					required="false" />
-			</p:column>
-		</p:row>
-		<p:row>
-			<p:column>
-				<p:outputLabel value="#{label['usuario.crud.campo.listPapel']}"
-					for="usuario_listPapel_sel" />
-			</p:column>
-			<p:column>
-				<p:selectManyMenu id="usuario_listPapel_sel" required="false"
-					value="#{usuarioCrudMB.modelSel.listPapel}"
-					converter="ModelABConverter" var="itemSel" filter="true"
-					filterMatchMode="contains" showCheckbox="true">
-					
-					<f:selectItems value="#{usuarioCrudMB.listPapelModel}" var="item"
-						itemLabel="#{item.label}" itemValue="#{item}" />
-
-					<p:column>
-						<p:outputLabel value="#{itemSel.label}" />
-					</p:column>
-
-				</p:selectManyMenu>
 			</p:column>
 		</p:row>
 
