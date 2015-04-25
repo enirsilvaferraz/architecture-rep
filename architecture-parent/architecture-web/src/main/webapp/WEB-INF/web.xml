@@ -18,7 +18,7 @@
 	<welcome-file-list>
 		<welcome-file>pages/pessoa.xhtml</welcome-file>
 	</welcome-file-list>
-	
+
 	<context-param>
 		<param-name>primefaces.THEME</param-name>
 		<param-value>home</param-value>
@@ -50,6 +50,12 @@
 	<context-param>
 		<description>Caso o campo String não seja preenchido o sistema vai considerar NULL e não mais string vazia</description>
 		<param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<context-param>
+		<description>Habilita vários icones do primefaces</description>
+		<param-name>primefaces.FONT_AWESOME</param-name>
 		<param-value>true</param-value>
 	</context-param>
 

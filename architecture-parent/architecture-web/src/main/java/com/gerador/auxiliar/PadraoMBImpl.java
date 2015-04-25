@@ -14,7 +14,8 @@ import com.archtecture.control.exceptions.NegocioException;
 import com.archtecture.control.facedes.PersistenceFacadeLocal;
 import com.archtecture.control.models.ModelAb;
 
-public abstract class PadraoMBImpl<Model extends ModelAb> implements PadraoMBIf<Model> {
+public abstract class PadraoMBImpl<Model extends ModelAb> implements
+		PadraoMBIf<Model> {
 
 	@EJB
 	private PersistenceFacadeLocal persistenceFacade;
@@ -24,8 +25,6 @@ public abstract class PadraoMBImpl<Model extends ModelAb> implements PadraoMBIf<
 	private Model modelCad;
 
 	private Model modelSel;
-
-	private boolean pesquisaRealizada;
 
 	protected void aposSalvar() throws NegocioException {
 
@@ -38,12 +37,8 @@ public abstract class PadraoMBImpl<Model extends ModelAb> implements PadraoMBIf<
 			getPersistenceFacade().excluir(pModel);
 			UtilWeb.enviarMensagem(MensagemEnum.INFO_SUCESSO_EXCLUSAO);
 
-			setListModel(null);
 			setModelCad(null);
 
-			if (isPesquisaRealizada()) {
-				executarPesquisar();
-			}
 		} catch (Exception e) {
 			UtilWeb.tratarException(e);
 		}
@@ -52,13 +47,13 @@ public abstract class PadraoMBImpl<Model extends ModelAb> implements PadraoMBIf<
 	@Override
 	public void executarPesquisar() {
 		try {
-			setListModel(getPersistenceFacade().pesquisarLista(getModelSel(), getTipoOrdenacao(), getAtributosOrdenacao()));
+			setListModel(getPersistenceFacade().pesquisarLista(getModelSel(),
+					getTipoOrdenacao(), getAtributosOrdenacao()));
 
 			if (getListModel().isEmpty()) {
 				UtilWeb.enviarMensagem(MensagemEnum.INFO_PESQUISA_VAZIA);
 			}
 
-			pesquisaRealizada = true;
 		} catch (Exception e) {
 			UtilWeb.tratarException(e);
 		}
@@ -69,7 +64,8 @@ public abstract class PadraoMBImpl<Model extends ModelAb> implements PadraoMBIf<
 
 		try {
 
-			if (getModelCad().getCodigo() == null || getModelCad().getCodigo().equals(0)) {
+			if (getModelCad().getCodigo() == null
+					|| getModelCad().getCodigo().equals(0)) {
 				prepararSalvar();
 				getPersistenceFacade().inserir(getModelCad());
 				UtilWeb.enviarMensagem(MensagemEnum.INFO_SUCESSO_CADASTRO);
@@ -80,17 +76,20 @@ public abstract class PadraoMBImpl<Model extends ModelAb> implements PadraoMBIf<
 
 			aposSalvar();
 
-			setListModel(null);
 			setModelCad(null);
 
-			if (isPesquisaRealizada()) {
-				executarPesquisar();
-			}
-
-			RequestContext.getCurrentInstance().execute("PF('dialogCadastro').hide()");
+			RequestContext.getCurrentInstance().execute(
+					"PF('dialogCadastro').hide()");
 		} catch (Exception e) {
 			UtilWeb.tratarException(e);
 		}
+	}
+
+	@Override
+	public void executarLimpar() {
+		setModelSel(null);
+		setListModel(null);
+		UtilWeb.enviarMensagem(MensagemEnum.INFO_SUCESSO_LIMPEZA);
 	}
 
 	protected String[] getAtributosOrdenacao() {
@@ -100,7 +99,8 @@ public abstract class PadraoMBImpl<Model extends ModelAb> implements PadraoMBIf<
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected Model getInstance() {
 		try {
-			ParameterizedType parameterizedType = (ParameterizedType) this.getClass().getGenericSuperclass();
+			ParameterizedType parameterizedType = (ParameterizedType) this
+					.getClass().getGenericSuperclass();
 			Class lClasse = (Class) parameterizedType.getActualTypeArguments()[0];
 			return (Model) lClasse.newInstance();
 		} catch (InstantiationException | IllegalAccessException e) {
@@ -140,11 +140,8 @@ public abstract class PadraoMBImpl<Model extends ModelAb> implements PadraoMBIf<
 		return TipoOrdenacao.ASC;
 	}
 
-	public boolean isPesquisaRealizada() {
-		return pesquisaRealizada;
-	}
-
-	protected List<? extends ModelAb> montarCombo(ModelAb pModel, TipoOrdenacao pTipoOrdenacao, String... pAtributosOrdenacao) {
+	protected List<? extends ModelAb> montarCombo(ModelAb pModel,
+			TipoOrdenacao pTipoOrdenacao, String... pAtributosOrdenacao) {
 
 		List<ModelAb> listCombo = new ArrayList<ModelAb>();
 
@@ -153,7 +150,8 @@ public abstract class PadraoMBImpl<Model extends ModelAb> implements PadraoMBIf<
 		}
 
 		try {
-			listCombo = getPersistenceFacade().pesquisarLista(pModel, pTipoOrdenacao, pAtributosOrdenacao);
+			listCombo = getPersistenceFacade().pesquisarLista(pModel,
+					pTipoOrdenacao, pAtributosOrdenacao);
 		} catch (Exception e) {
 			UtilWeb.tratarException(e);
 		}
@@ -164,13 +162,15 @@ public abstract class PadraoMBImpl<Model extends ModelAb> implements PadraoMBIf<
 	@Override
 	public void prepararDetalhes(Model pModel) {
 		setModelCad(pModel);
-		RequestContext.getCurrentInstance().execute("PF('dialogDetalhes').show()");
+		RequestContext.getCurrentInstance().execute(
+				"PF('dialogDetalhes').show()");
 	}
 
 	@Override
 	public void prepararEditar(Model pModel) {
 		setModelCad(pModel);
-		RequestContext.getCurrentInstance().execute("PF('dialogCadastro').show()");
+		RequestContext.getCurrentInstance().execute(
+				"PF('dialogCadastro').show()");
 	}
 
 	protected void prepararSalvar() throws NegocioException {

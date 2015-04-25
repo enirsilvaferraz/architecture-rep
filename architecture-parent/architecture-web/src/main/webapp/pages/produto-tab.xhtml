@@ -7,22 +7,22 @@
 
 	<ui:define name="define-tabela-padrao">
 
-<p:column headerText="#{label['produto.tab.campo.codigo']}">
+<p:column headerText="#{label['produto.tab.campo.codigo']}" sortBy="#{item.codigo}">
 	<p:outputLabel value="#{item.codigo}" />
-</p:column><p:column headerText="#{label['produto.tab.campo.nome']}">
+</p:column><p:column headerText="#{label['produto.tab.campo.nome']}" sortBy="#{item.nome}">
 	<p:outputLabel value="#{item.nome}" />
-</p:column><p:column headerText="#{label['produto.tab.campo.lucro']}">
+</p:column><p:column headerText="#{label['produto.tab.campo.lucro']}" sortBy="#{item.lucro}">
 	<p:outputLabel value="#{item.lucro}" />
-</p:column><p:column headerText="#{label['produto.tab.campo.valorCusto']}">
+</p:column><p:column headerText="#{label['produto.tab.campo.valorCusto']}" sortBy="#{item.valorCusto}">
 	<p:outputLabel value="#{item.valorCusto}" />
-</p:column><p:column headerText="#{label['produto.tab.campo.valorVenda']}">
+</p:column><p:column headerText="#{label['produto.tab.campo.valorVenda']}" sortBy="#{item.valorVenda}">
 	<p:outputLabel value="#{item.valorVenda}" />
-</p:column><p:column headerText="#{label['produto.tab.campo.categoria']}">
+</p:column><p:column headerText="#{label['produto.tab.campo.categoria']}" sortBy="#{item.categoria}">
 	<p:outputLabel value="#{item.categoria.label}" />
 </p:column>
-			<p:column headerText="#{label['produto.tab.campo.quantidadeEstoque']}">
+			<p:column headerText="#{label['produto.tab.campo.quantidadeEstoque']}" sortBy="#{item.quantidadeEstoque}">
 	<p:outputLabel value="#{item.quantidadeEstoque}" />
-</p:column><p:column headerText="#{label['produto.tab.campo.flPreCadastro']}">
+</p:column><p:column headerText="#{label['produto.tab.campo.flPreCadastro']}" sortBy="#{item.flPreCadastro}">
 	<p:outputLabel value="#{item.flPreCadastro}" />
 </p:column>
 

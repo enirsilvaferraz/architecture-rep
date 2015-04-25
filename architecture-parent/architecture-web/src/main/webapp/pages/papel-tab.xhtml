@@ -7,9 +7,9 @@
 
 	<ui:define name="define-tabela-padrao">
 
-<p:column headerText="#{label['papel.tab.campo.codigo']}">
+<p:column headerText="#{label['papel.tab.campo.codigo']}" sortBy="#{item.codigo}">
 	<p:outputLabel value="#{item.codigo}" />
-</p:column><p:column headerText="#{label['papel.tab.campo.nome']}">
+</p:column><p:column headerText="#{label['papel.tab.campo.nome']}" sortBy="#{item.nome}">
 	<p:outputLabel value="#{item.nome}" />
 </p:column>
 

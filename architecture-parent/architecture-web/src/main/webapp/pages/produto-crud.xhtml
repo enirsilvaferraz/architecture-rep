@@ -7,22 +7,22 @@
 
 	<ui:define name="define-tabela-padrao">
 
-<p:column headerText="#{label['produto.crud.campo.codigo']}">
+<p:column headerText="#{label['produto.crud.campo.codigo']}" sortBy="#{item.codigo}">
 	<p:outputLabel value="#{item.codigo}" />
-</p:column><p:column headerText="#{label['produto.crud.campo.nome']}">
+</p:column><p:column headerText="#{label['produto.crud.campo.nome']}" sortBy="#{item.nome}">
 	<p:outputLabel value="#{item.nome}" />
-</p:column><p:column headerText="#{label['produto.crud.campo.lucro']}">
+</p:column><p:column headerText="#{label['produto.crud.campo.lucro']}" sortBy="#{item.lucro}">
 	<p:outputLabel value="#{item.lucro}" />
-</p:column><p:column headerText="#{label['produto.crud.campo.valorCusto']}">
+</p:column><p:column headerText="#{label['produto.crud.campo.valorCusto']}" sortBy="#{item.valorCusto}">
 	<p:outputLabel value="#{item.valorCusto}" />
-</p:column><p:column headerText="#{label['produto.crud.campo.valorVenda']}">
+</p:column><p:column headerText="#{label['produto.crud.campo.valorVenda']}" sortBy="#{item.valorVenda}">
 	<p:outputLabel value="#{item.valorVenda}" />
-</p:column><p:column headerText="#{label['produto.crud.campo.categoria']}">
+</p:column><p:column headerText="#{label['produto.crud.campo.categoria']}" sortBy="#{item.categoria}">
 	<p:outputLabel value="#{item.categoria.label}" />
 </p:column>
-			<p:column headerText="#{label['produto.crud.campo.quantidadeEstoque']}">
+			<p:column headerText="#{label['produto.crud.campo.quantidadeEstoque']}" sortBy="#{item.quantidadeEstoque}">
 	<p:outputLabel value="#{item.quantidadeEstoque}" />
-</p:column><p:column headerText="#{label['produto.crud.campo.flPreCadastro']}">
+</p:column><p:column headerText="#{label['produto.crud.campo.flPreCadastro']}" sortBy="#{item.flPreCadastro}">
 	<p:outputLabel value="#{item.flPreCadastro}" />
 </p:column>
 

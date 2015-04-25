@@ -22,6 +22,8 @@ public interface PadraoMBIf<Model extends ModelAb> {
 
 	void prepararEditar(Model pModel);
 
+	void executarLimpar();
+
 	// void executarPesquisar();
 	//
 	// void executarSalvar();

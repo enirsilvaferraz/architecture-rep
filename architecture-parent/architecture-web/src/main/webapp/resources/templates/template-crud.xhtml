@@ -13,27 +13,17 @@
 
 				<f:facet name="footer">
 					<div align="right">
-						<p:commandButton value="#{label['sistema.botao.pesquisar']}" icon="ui-icon-clipboard" title="#{label['sistema.botao.pesquisar']}"
-							actionListener="#{padraoMB.executarPesquisar()}" process="panelFiltros" update="dataTable panelFiltros" />
+						<p:commandButton value="#{label['sistema.botao.limpar']}" icon="fa fa-eraser"
+							title="#{label['sistema.botao.limpar']}" actionListener="#{padraoMB.executarLimpar()}" process="@this"
+							update="dataTable panelFiltros" />
+						<p:commandButton value="#{label['sistema.botao.pesquisar']}" icon="ui-icon-search"
+							title="#{label['sistema.botao.pesquisar']}" actionListener="#{padraoMB.executarPesquisar()}"
+							process="panelFiltros" update="dataTable panelFiltros" />
 					</div>
 				</f:facet>
 			</p:panel>
-			<p:spacer width="100%" height="20" />
 
 		</ui:insert>
-		
-		
-		<ui:insert name="define-comandos">
-
-			<p:panel style="text-align:right">
-				<p:commandButton value="#{label['sistema.botao.incluir']}" title="#{label['sistema.botao.incluir']}"
-					oncomplete="PF('dialogCadastro').show()" process="@this" update="panel_dialog">
-					<f:setPropertyActionListener target="#{padraoMB.modelCad}" value="#{null}" />
-				</p:commandButton>
-			</p:panel>
-
-		</ui:insert>
-
 
 
 		<ui:insert name="define-cadastro">
@@ -46,11 +36,12 @@
 				</p:panelGrid>
 
 				<f:facet name="footer">
-					<p:commandButton value="#{label['sistema.botao.salvar']}" title="#{label['sistema.botao.salvar']}"
-						actionListener="#{padraoMB.executarSalvar()}" process="dialogCadastro" update="panel_dialog dataTable" />
+					<p:commandButton value="#{label['sistema.botao.salvar']}" icon="ui-icon-disk"
+						title="#{label['sistema.botao.salvar']}" actionListener="#{padraoMB.executarSalvar()}" process="dialogCadastro"
+						update="panel_dialog dataTable" />
 
-					<p:commandButton value="#{label['sistema.botao.cancelar']}" title="#{label['sistema.botao.cancelar']}"
-						onclick="PF('dialogCadastro').hide()" immediate="true">
+					<p:commandButton value="#{label['sistema.botao.cancelar']}" icon="ui-icon-cancel"
+						title="#{label['sistema.botao.cancelar']}" onclick="PF('dialogCadastro').hide()" immediate="true">
 						<f:setPropertyActionListener target="#{padraoMB.modelCad}" value="#{null}" />
 					</p:commandButton>
 				</f:facet>
@@ -71,8 +62,8 @@
 				</p:panelGrid>
 
 				<f:facet name="footer">
-					<p:commandButton value="#{label['sistema.botao.cancelar']}" title="#{label['sistema.botao.cancelar']}"
-						onclick="PF('dialogDetalhes').hide()" immediate="true">
+					<p:commandButton value="#{label['sistema.botao.cancelar']}" icon="ui-icon-cancel"
+						title="#{label['sistema.botao.cancelar']}" onclick="PF('dialogDetalhes').hide()" immediate="true">
 						<f:setPropertyActionListener target="#{padraoMB.modelCad}" value="#{null}" />
 					</p:commandButton>
 				</f:facet>
@@ -86,8 +77,8 @@
 
 		<ui:insert name="define-tabela">
 
-			<p:dataTable id="dataTable" value="#{padraoMB.listModel}" var="item" rows="10" paginator="true"
-				paginatorPosition="bottom" emptyMessage="#{label['sistema.tabela.emptymessage']}" lazy="true">
+			<p:dataTable id="dataTable" value="#{padraoMB.listModel}" var="item" rows="20" paginator="true"
+				paginatorPosition="bottom" emptyMessage="#{label['sistema.tabela.emptymessage']}">
 
 				<ui:insert name="define-tabela-padrao" />
 
@@ -108,6 +99,19 @@
 
 			</p:dataTable>
 			<p:spacer width="100%" height="5" />
+
+		</ui:insert>
+
+
+		<ui:insert name="define-comandos">
+
+			<p:panel style="text-align:right">
+				<p:commandButton value="#{label['sistema.botao.incluir']}" icon="ui-icon-document"
+					title="#{label['sistema.botao.incluir']}" oncomplete="PF('dialogCadastro').show()" process="@this"
+					update="panel_dialog">
+					<f:setPropertyActionListener target="#{padraoMB.modelCad}" value="#{null}" />
+				</p:commandButton>
+			</p:panel>
 
 		</ui:insert>
 

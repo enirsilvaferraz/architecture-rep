@@ -8,6 +8,7 @@ public enum MensagemEnum {
 	INFO_PESQUISA_VAZIA(FacesMessage.SEVERITY_WARN, "sistema.info.pesquisa_vazia"),
 	INFO_SUCESSO_CADASTRO(FacesMessage.SEVERITY_INFO, "sistema.info.sucesso_cadastro"),
 	INFO_SUCESSO_EDICAO(FacesMessage.SEVERITY_INFO, "sistema.info.sucesso_edicao"),
+	INFO_SUCESSO_LIMPEZA(FacesMessage.SEVERITY_INFO, "sistema.info.limpeza_concluida"),
 
 	INFO_SUCESSO_EXCLUSAO(FacesMessage.SEVERITY_INFO, "sistema.info.sucesso_exclusao"),
 

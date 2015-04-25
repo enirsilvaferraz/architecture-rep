@@ -1,8 +1,5 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:h="http://java.sun.com/jsf/html"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html"
 	template="/resources/templates/template-crud.xhtml">
 
 	<ui:param name="param_titulo" value="#{label['papel.crud.titulo']}" />
@@ -10,91 +7,71 @@
 
 	<ui:define name="define-tabela-padrao">
 
-		<p:column headerText="#{label['papel.crud.campo.codigo']}">
-			<p:outputLabel value="#{item.codigo}" />
-		</p:column>
-		<p:column headerText="#{label['papel.crud.campo.nome']}">
-			<p:outputLabel value="#{item.nome}" />
-		</p:column>
+<p:column headerText="#{label['papel.crud.campo.codigo']}" sortBy="#{item.codigo}">
+	<p:outputLabel value="#{item.codigo}" />
+</p:column><p:column headerText="#{label['papel.crud.campo.nome']}" sortBy="#{item.nome}">
+	<p:outputLabel value="#{item.nome}" />
+</p:column>
 
 	</ui:define>
 
 	<ui:define name="define-filtros-padrao">
 
-		<p:row>
-			<p:column>
-				<p:outputLabel value="#{label['papel.crud.campo.codigo']}"
-					for="papel_codigo_sel" />
-			</p:column>
-			<p:column>
-				<p:inputText id="papel_codigo_sel"
-					value="#{papelCrudMB.modelSel.codigo}" maxlength="10"
-					required="false" />
-			</p:column>
-		</p:row>
-		<p:row>
-			<p:column>
-				<p:outputLabel value="#{label['papel.crud.campo.nome']}"
-					for="papel_nome_sel" />
-			</p:column>
-			<p:column>
-				<p:inputText id="papel_nome_sel"
-					value="#{papelCrudMB.modelSel.nome}" maxlength="100"
-					required="false" />
-			</p:column>
-		</p:row>
+<p:row>
+	<p:column>
+		<p:outputLabel value="#{label['papel.crud.campo.codigo']}" for="papel_codigo_sel" />
+	</p:column>
+	<p:column>
+		<p:inputText id="papel_codigo_sel" value="#{papelCrudMB.modelSel.codigo}" maxlength="10" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['papel.crud.campo.nome']}" for="papel_nome_sel" />
+	</p:column>
+	<p:column>
+		<p:inputText id="papel_nome_sel" value="#{papelCrudMB.modelSel.nome}" maxlength="100" required="false"  />
+	</p:column>
+</p:row>
 
 	</ui:define>
 
 	<ui:define name="define-cadastro-padrao">
 
-		<p:row>
-			<p:column>
-				<p:outputLabel value="#{label['papel.crud.campo.codigo']}"
-					for="papel_codigo_cad" />
-			</p:column>
-			<p:column>
-				<p:inputText id="papel_codigo_cad"
-					value="#{papelCrudMB.modelCad.codigo}" maxlength="10"
-					required="false" />
-			</p:column>
-		</p:row>
-		<p:row>
-			<p:column>
-				<p:outputLabel value="#{label['papel.crud.campo.nome']}"
-					for="papel_nome_cad" />
-			</p:column>
-			<p:column>
-				<p:inputText id="papel_nome_cad"
-					value="#{papelCrudMB.modelCad.nome}" maxlength="100"
-					required="false" />
-			</p:column>
-		</p:row>
+<p:row>
+	<p:column>
+		<p:outputLabel value="#{label['papel.crud.campo.codigo']}" for="papel_codigo_cad" />
+	</p:column>
+	<p:column>
+		<p:inputText id="papel_codigo_cad" value="#{papelCrudMB.modelCad.codigo}" maxlength="10" required="false"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['papel.crud.campo.nome']}" for="papel_nome_cad" />
+	</p:column>
+	<p:column>
+		<p:inputText id="papel_nome_cad" value="#{papelCrudMB.modelCad.nome}" maxlength="100" required="false"  />
+	</p:column>
+</p:row>
 
 	</ui:define>
 
 	<ui:define name="define-detalhes-padrao">
 
-		<p:row>
-			<p:column>
-				<p:outputLabel value="#{label['papel.crud.campo.codigo']}"
-					for="papel_codigo_det" />
-			</p:column>
-			<p:column>
-				<p:outputLabel id="papel_codigo_det"
-					value="#{papelCrudMB.modelCad.codigo}" />
-			</p:column>
-		</p:row>
-		<p:row>
-			<p:column>
-				<p:outputLabel value="#{label['papel.crud.campo.nome']}"
-					for="papel_nome_det" />
-			</p:column>
-			<p:column>
-				<p:outputLabel id="papel_nome_det"
-					value="#{papelCrudMB.modelCad.nome}" />
-			</p:column>
-		</p:row>
+<p:row>
+	<p:column>
+		<p:outputLabel value="#{label['papel.crud.campo.codigo']}" for="papel_codigo_det" />
+	</p:column>
+	<p:column>
+		<p:outputLabel id="papel_codigo_det" value="#{papelCrudMB.modelCad.codigo}"  />
+	</p:column>
+</p:row><p:row>
+	<p:column>
+		<p:outputLabel value="#{label['papel.crud.campo.nome']}" for="papel_nome_det" />
+	</p:column>
+	<p:column>
+		<p:outputLabel id="papel_nome_det" value="#{papelCrudMB.modelCad.nome}"  />
+	</p:column>
+</p:row>
 
 	</ui:define>
 
