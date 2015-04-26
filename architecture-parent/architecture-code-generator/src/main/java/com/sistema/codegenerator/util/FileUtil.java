@@ -79,8 +79,11 @@ public class FileUtil {
 			lClasseConfig.setLogicaTela(LogicaTela.valueOf(Integer.valueOf(prop.getProperty("classe." + iterator + ".logica.tela"))));
 
 			// Obter a referencia a classe
-			Class<?> lClasse = ClassLoaderExtention.getInstance(prop.getProperty("caminho.classpath")).loadClass(
+			Class<?> lClasse = ClassLoaderExtention.getInstance(
+					prop.getProperty("caminho.1.classpath"),
+					prop.getProperty("caminho.2.classpath")).loadClass(
 					prop.getProperty("classe." + iterator + ".nome"));
+			
 			lClasseConfig.setClasse(lClasse);
 
 			// Recuperar Fields

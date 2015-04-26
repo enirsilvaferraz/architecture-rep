@@ -2,7 +2,7 @@ package com.sistema.codegenerator.model.enums;
 
 public enum LogicaTela {
 
-	CRUD_PADRAO(0, "crud"), TABULAR(1, "tab");
+	CRUD_PADRAO(0, "crud"), TABULAR(1, "tab"), CONFIGURACAO(2, "conf");
 
 	public static LogicaTela valueOf(Integer id) {
 		return LogicaTela.values()[id];

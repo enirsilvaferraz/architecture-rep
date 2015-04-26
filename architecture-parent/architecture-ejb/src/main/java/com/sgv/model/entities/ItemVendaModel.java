@@ -10,10 +10,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.archtecture.control.models.ModelAb;
+import com.archtecture.model.entities.ModelAb;
 
 @Entity
-@Table(name = "TBITEM_VENDA")
+@Table(name = "TBITEM_VENDA", schema="sgvdev")
 public class ItemVendaModel extends ModelAb {
 
 	/**

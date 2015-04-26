@@ -9,10 +9,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import com.archtecture.control.models.ModelAb;
+import com.archtecture.model.entities.ModelAb;
 
 @Entity
-@Table(name = "TBPRODUTO")
+@Table(name = "TBPRODUTO", schema="sgvdev")
 public class ProdutoModel extends ModelAb {
 
 	/**

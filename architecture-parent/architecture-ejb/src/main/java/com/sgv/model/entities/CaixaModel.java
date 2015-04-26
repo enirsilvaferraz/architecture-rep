@@ -15,10 +15,10 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-import com.archtecture.control.models.ModelAb;
+import com.archtecture.model.entities.ModelAb;
 
 @Entity
-@Table(name = "TBCAIXA")
+@Table(name = "TBCAIXA", schema="sgvdev")
 public class CaixaModel extends ModelAb {
 
 	/**

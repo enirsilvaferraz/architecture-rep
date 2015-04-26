@@ -4,18 +4,31 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClassLoaderExtention extends ClassLoader {
 
-	public static ClassLoaderExtention getInstance(String pClassPath) {
+	public static ClassLoaderExtention getInstance(String... pClassPath) {
 		return new ClassLoaderExtention(ClassLoaderExtention.class.getClassLoader(), pClassPath);
 	}
 
-	private String classPath;
+	private List<URL> classPath;
 
-	public ClassLoaderExtention(ClassLoader parent, String pClassPath) {
+	public ClassLoaderExtention(ClassLoader parent, String... pClassPath) {
+
 		super(parent);
-		classPath = pClassPath;
+
+		classPath = new ArrayList<>();
+
+		for (String string : pClassPath) {
+			try {
+				classPath.add(new File(string).toURI().toURL());
+			} catch (MalformedURLException e2) {
+				e2.printStackTrace();
+			}
+		}
+
 	}
 
 	@Override
@@ -27,16 +40,9 @@ public class ClassLoaderExtention extends ClassLoader {
 
 		catch (Exception e) {
 
-			try {
+			URLClassLoader cl = URLClassLoader.newInstance((URL[]) classPath.toArray(new URL[classPath.size()]));
+			return cl.loadClass(name);
 
-				URLClassLoader cl = URLClassLoader.newInstance(new URL[] { new File(classPath).toURI().toURL() });
-				return cl.loadClass(name);
-
-			} catch (MalformedURLException e2) {
-				e2.printStackTrace();
-			}
 		}
-
-		return null;
 	}
 }

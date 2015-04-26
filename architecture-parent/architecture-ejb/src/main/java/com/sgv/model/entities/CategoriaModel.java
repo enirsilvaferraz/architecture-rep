@@ -7,10 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.archtecture.control.models.ModelAb;
+import com.archtecture.model.entities.ModelAb;
 
 @Entity
-@Table(name = "TBCATEGORIA")
+@Table(name = "TBCATEGORIA", schema="sgvdev")
 public class CategoriaModel extends ModelAb {
 
 	/**

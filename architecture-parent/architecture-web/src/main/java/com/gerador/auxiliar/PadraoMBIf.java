@@ -2,7 +2,7 @@ package com.gerador.auxiliar;
 
 import java.util.List;
 
-import com.archtecture.control.models.ModelAb;
+import com.archtecture.model.entities.ModelAb;
 
 public interface PadraoMBIf<Model extends ModelAb> {
 

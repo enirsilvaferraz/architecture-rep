@@ -3,7 +3,7 @@ package com.exemplo.controller;
 import java.util.Date;
 import java.util.List;
 
-import com.archtecture.control.models.ModelAb;
+import com.archtecture.model.entities.ModelAb;
 
 public class PessoaModel extends ModelAb {
 

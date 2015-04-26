@@ -14,10 +14,10 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.archtecture.control.models.ModelAb;
+import com.archtecture.model.entities.ModelAb;
 
 @Entity
-@Table(name = "TBCOMPRA")
+@Table(name = "TBCOMPRA", schema="sgvdev")
 public class CompraModel extends ModelAb {
 
 	/**

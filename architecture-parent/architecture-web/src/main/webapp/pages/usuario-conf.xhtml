@@ -1,0 +1,37 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html"
+	template="/resources/templates/template-conf.xhtml">
+
+	<ui:param name="param_titulo" value="#{label['usuario.conf.titulo']}" />
+	<ui:param name="padraoMB" value="#{usuarioConfMB}" />
+
+	<ui:define name="define-cadastro-padrao">
+
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['usuario.conf.campo.nome']}" for="usuario_nome_cad" />
+			</p:column>
+			<p:column>
+				<p:inputText id="usuario_nome_cad" value="#{usuarioConfMB.modelCad.nome}" maxlength="10" required="true" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['usuario.conf.campo.login']}" for="usuario_login_cad" />
+			</p:column>
+			<p:column>
+				<p:inputText id="usuario_login_cad" value="#{usuarioConfMB.modelCad.login}" maxlength="100" required="false" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['usuario.conf.campo.senha']}" for="usuario_senha_cad" />
+			</p:column>
+			<p:column>
+				<p:inputText id="usuario_senha_cad" value="#{usuarioConfMB.modelCad.senha}" maxlength="50" required="true" />
+			</p:column>
+		</p:row>
+
+	</ui:define>
+
+</ui:composition>

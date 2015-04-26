@@ -7,10 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.archtecture.control.models.ModelAb;
+import com.archtecture.model.entities.ModelAb;
 
 @Entity
-@Table(name = "TBFORNECEDOR")
+@Table(name = "TBFORNECEDOR", schema="sgvdev")
 public class FornecedorModel extends ModelAb {
 
 	/**

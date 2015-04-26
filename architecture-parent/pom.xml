@@ -100,11 +100,14 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-ejb-plugin</artifactId>
-					<version>2.5</version>
+					<!-- <version>2.5</version> -->
 					<configuration>
 						<!-- http://maven.apache.org/plugins/maven-ejb-plugin/ -->
 						<ejbVersion>3.1</ejbVersion>
 						<generateClient>true</generateClient>
+						<clientIncludes>
+							<clientInclude>**/*.class</clientInclude>
+						</clientIncludes>
 						<archive>
 							<addMavenDescriptor>false</addMavenDescriptor>
 							<manifest>
@@ -178,5 +181,6 @@
 		<module>architecture-ejb</module>
 		<module>architecture-ear</module>
 		<module>architecture-code-generator</module>
+		<module>architecture-core</module>
 	</modules>
 </project>

@@ -14,10 +14,10 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import com.archtecture.control.models.ModelAb;
+import com.archtecture.model.entities.ModelAb;
 
 @Entity
-@Table(name = "TBUSUARIO")
+@Table(name = "TBUSUARIO", schema="sgvdev")
 public class UsuarioModel extends ModelAb {
 
 	/**
