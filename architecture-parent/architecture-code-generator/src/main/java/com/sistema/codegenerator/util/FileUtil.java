@@ -187,7 +187,7 @@ public class FileUtil {
 	public static boolean verificarInstanciaObjeto(Class<?> tipo) {
 
 		// Se for java.lang.String por exemplo
-		if (tipo != Object.class && tipo.getPackage().toString().contains("java.lang")) {
+		if (tipo != Object.class && tipo.getPackage().getName().toString().contains("java.")) {
 			return false;
 		}
 

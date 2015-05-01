@@ -15,6 +15,13 @@ import com.sistema.codegenerator.util.FileUtil;
 
 public class FactoryManagedBean {
 
+	/**
+	 * Inicia a geração do código
+	 * 
+	 * @param pConfig
+	 * @param pClasseModel
+	 * @throws IOException
+	 */
 	public static void gerar(AplicacaoConfig pConfig, ClasseConfig pClasseModel) throws IOException {
 
 		String texto = FileUtil.obterTextoArquivo(FileUtil.obterTemplateMB(pClasseModel));
@@ -40,6 +47,13 @@ public class FactoryManagedBean {
 
 	}
 
+	/**
+	 * Método usado para configurar os combos no managed bean
+	 * 
+	 * @param pClasseModel
+	 * @return
+	 * @throws FileNotFoundException
+	 */
 	private static String preencherCombo(ClasseConfig pClasseModel) throws FileNotFoundException {
 
 		StringBuilder lSB = new StringBuilder();

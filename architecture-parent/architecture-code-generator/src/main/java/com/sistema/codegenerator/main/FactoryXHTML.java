@@ -56,6 +56,13 @@ public class FactoryXHTML {
 		return lNomeClasse.substring(0, 1).toLowerCase() + lNomeClasse.substring(1);
 	}
 
+	/**
+	 * Inicia a geração do código do XHTML
+	 * 
+	 * @param pConfig
+	 * @param pClasseModel
+	 * @throws IOException
+	 */
 	@SuppressWarnings("resource")
 	public static void gerar(AplicacaoConfig pConfig, ClasseConfig pClasseModel) throws IOException {
 

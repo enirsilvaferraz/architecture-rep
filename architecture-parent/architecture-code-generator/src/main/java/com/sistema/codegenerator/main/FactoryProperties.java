@@ -24,10 +24,18 @@ public class FactoryProperties {
 	 */
 	private static String PROP_NOME = "{0}.{1}.campo.{2}";
 
+	/**
+	 * Realiza a geração do código
+	 * 
+	 * @param pConfig
+	 * @param pClasseModel
+	 * @throws IOException
+	 */
 	public static void gerar(AplicacaoConfig pConfig, ClasseConfig pClasseModel) throws IOException {
 
 		// Obtém o arquivo em que será salva as alterações
 		StringBuilder lSB = new StringBuilder(FileUtil.obterTextoArquivo(pConfig.getCaminhoLabel()));
+		lSB.append("\n\n");
 
 		// Define o título
 		definirTitulo(pClasseModel, lSB);
@@ -43,17 +51,23 @@ public class FactoryProperties {
 			String lValor = atributo.getNome().substring(0, 1).toUpperCase() + atributo.getNome().substring(1);
 
 			// Adiciona no buffer se necessario
-			if (verificarExistenciaLabel(lSB, lLabel, lValor)) {
+			if (verificarExistenciaLabel(lSB, lLabel)) {
 				lSB.append(lLabel).append("=").append(lValor).append("\n");
 			}
 		}
 
 		// Adiciona no arquivo
 		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(pConfig.getCaminhoLabel()));
-		buffWrite.append(lSB.toString());
+		buffWrite.append(lSB.toString().trim());
 		buffWrite.close();
 	}
 
+	/**
+	 * Define o título da tela
+	 * 
+	 * @param pClasseModel
+	 * @param lSB
+	 */
 	private static void definirTitulo(ClasseConfig pClasseModel, StringBuilder lSB) {
 
 		// Define o título conforme padrão
@@ -63,7 +77,7 @@ public class FactoryProperties {
 		String lValor = pClasseModel.getTituloDaTela();
 
 		// Adiciona no buffer se necessario
-		if (verificarExistenciaLabel(lSB, lLabel, lValor)) {
+		if (verificarExistenciaLabel(lSB, lLabel)) {
 			lSB.append(lLabel).append("=").append(lValor).append("\n");
 		}
 	}
@@ -76,13 +90,7 @@ public class FactoryProperties {
 	 * @param pValor
 	 * @return
 	 */
-	private static boolean verificarExistenciaLabel(StringBuilder lSB, String pLabel, String pValor) {
-
+	private static boolean verificarExistenciaLabel(StringBuilder lSB, String pLabel) {
 		return !lSB.toString().contains(pLabel);
-
-		// System.out.println("           Label: " + pLabel + " (Adicionado)");
-		// System.out.println("           Label: " + pLabel +
-		// " (Já no arquivo)");
-
 	}
 }
