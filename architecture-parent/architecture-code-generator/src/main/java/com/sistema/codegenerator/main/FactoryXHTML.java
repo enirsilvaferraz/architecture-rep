@@ -16,7 +16,7 @@ import com.sistema.codegenerator.model.ClasseConfig;
 import com.sistema.codegenerator.model.enums.TipoTemplate;
 import com.sistema.codegenerator.util.FileUtil;
 
-public class GerarXHTML {
+public class FactoryXHTML {
 
 	private static String carregarColunas(AplicacaoConfig pConfig, ClasseConfig pClasseModel, TipoTemplate pTipoTemplate)
 			throws FileNotFoundException {
@@ -57,7 +57,7 @@ public class GerarXHTML {
 	}
 
 	@SuppressWarnings("resource")
-	public static void gerarArquivoXhtml(AplicacaoConfig pConfig, ClasseConfig pClasseModel) throws IOException {
+	public static void gerar(AplicacaoConfig pConfig, ClasseConfig pClasseModel) throws IOException {
 
 		// Define o nome do model. Ex: Pessoa
 		String lModelName = definirNomeModelParaPaginaXhtml(pClasseModel.getClasse().getSimpleName());

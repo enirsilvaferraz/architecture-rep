@@ -15,6 +15,8 @@ public class ClasseConfig {
 
 	private LogicaTela logicaTela;
 
+	private String tituloDaTela;
+
 	private String nomeModel;
 
 	private String nomeModelProperties;
@@ -49,7 +51,8 @@ public class ClasseConfig {
 	public String getNomeModel() {
 
 		nomeModel = getClasse().getSimpleName().replace("Model", "").substring(0, 1).toLowerCase()
-				+ getClasse().getSimpleName().replace("Model", "").substring(1) + getLogicaTela().getExtesaoTela().substring(0, 1).toUpperCase()
+				+ getClasse().getSimpleName().replace("Model", "").substring(1)
+				+ getLogicaTela().getExtesaoTela().substring(0, 1).toUpperCase()
 				+ getLogicaTela().getExtesaoTela().substring(1);
 
 		return nomeModel;
@@ -102,6 +105,14 @@ public class ClasseConfig {
 
 	public void setPacoteManagedBean(String pacoteManagedBean) {
 		this.pacoteManagedBean = pacoteManagedBean;
+	}
+
+	public String getTituloDaTela() {
+		return tituloDaTela;
+	}
+
+	public void setTituloDaTela(String tituloDaTela) {
+		this.tituloDaTela = tituloDaTela;
 	}
 
 }

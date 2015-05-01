@@ -75,6 +75,7 @@ public class FileUtil {
 			}
 
 			ClasseConfig lClasseConfig = new ClasseConfig();
+			lClasseConfig.setPacoteManagedBean(prop.getProperty("classe." + iterator + ".tela.nome"));
 			lClasseConfig.setPacoteManagedBean(prop.getProperty("classe." + iterator + ".pacote.mb"));
 			lClasseConfig.setLogicaTela(LogicaTela.valueOf(Integer.valueOf(prop.getProperty("classe." + iterator + ".logica.tela"))));
 

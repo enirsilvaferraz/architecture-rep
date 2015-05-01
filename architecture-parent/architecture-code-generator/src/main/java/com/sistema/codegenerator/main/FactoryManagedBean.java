@@ -13,9 +13,9 @@ import com.sistema.codegenerator.model.CampoConfig;
 import com.sistema.codegenerator.model.ClasseConfig;
 import com.sistema.codegenerator.util.FileUtil;
 
-public class GerarManagedBean {
+public class FactoryManagedBean {
 
-	public static void gerarManagedBean(AplicacaoConfig pConfig, ClasseConfig pClasseModel) throws IOException {
+	public static void gerar(AplicacaoConfig pConfig, ClasseConfig pClasseModel) throws IOException {
 
 		String texto = FileUtil.obterTextoArquivo(FileUtil.obterTemplateMB(pClasseModel));
 
