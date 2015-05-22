@@ -1,13 +1,11 @@
 package com.sgv.controller;
 
-import com.sgv.model.entities.PapelModel;
-
-
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import com.gerador.auxiliar.PadraoMBImpl;
+import com.sgv.model.entities.PapelModel;
 
 @ViewScoped
 @ManagedBean
