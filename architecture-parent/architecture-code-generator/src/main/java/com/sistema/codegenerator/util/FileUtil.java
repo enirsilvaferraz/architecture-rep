@@ -20,10 +20,11 @@ import com.sistema.codegenerator.model.enums.TipoTemplate;
 public class FileUtil {
 
 	@SuppressWarnings("resource")
-	public static String carregarComponente(ClasseConfig pClasseConfig, CampoConfig pCampoConfig, TipoTemplate pTipoTemplate)
-			throws FileNotFoundException {
+	public static String carregarComponente(ClasseConfig pClasseConfig, CampoConfig pCampoConfig,
+			TipoTemplate pTipoTemplate) throws FileNotFoundException {
 
-		Scanner scanner = new Scanner(new FileReader(obterTemplateComponente(pClasseConfig, pCampoConfig, pTipoTemplate))).useDelimiter("\\Z");
+		Scanner scanner = new Scanner(new FileReader(
+				obterTemplateComponente(pClasseConfig, pCampoConfig, pTipoTemplate))).useDelimiter("\\Z");
 		String column = "";
 		if (scanner.hasNext()) {
 			column = scanner.next();
@@ -61,11 +62,24 @@ public class FileUtil {
 		return lConfig;
 	}
 
-	public static List<ClasseConfig> obterListaClassesModelArquivoProperties() throws ClassNotFoundException, IOException, NoSuchFieldException,
-			SecurityException {
+	public static List<ClasseConfig> obterListaClassesModelArquivoProperties() throws ClassNotFoundException,
+			IOException, NoSuchFieldException, SecurityException {
 
 		List<ClasseConfig> lListClasseConfig = new ArrayList<ClasseConfig>();
 		Properties prop = obterArquivoProperties();
+
+		List<String> lClasspath = new ArrayList<>();
+
+		int iteratorClassPath = 1;
+		while (true) {
+
+			if (prop.getProperty("caminho." + iteratorClassPath + ".classpath") != null) {
+				lClasspath.add(prop.getProperty("caminho." + iteratorClassPath + ".classpath"));
+				iteratorClassPath++;
+			} else {
+				break;
+			}
+		}
 
 		int iterator = 1;
 		do {
@@ -77,14 +91,13 @@ public class FileUtil {
 			ClasseConfig lClasseConfig = new ClasseConfig();
 			lClasseConfig.setPacoteManagedBean(prop.getProperty("classe." + iterator + ".tela.nome"));
 			lClasseConfig.setPacoteManagedBean(prop.getProperty("classe." + iterator + ".pacote.mb"));
-			lClasseConfig.setLogicaTela(LogicaTela.valueOf(Integer.valueOf(prop.getProperty("classe." + iterator + ".logica.tela"))));
+			lClasseConfig.setLogicaTela(LogicaTela.valueOf(Integer.valueOf(prop.getProperty("classe." + iterator
+					+ ".logica.tela"))));
 
 			// Obter a referencia a classe
-			Class<?> lClasse = ClassLoaderExtention.getInstance(
-					prop.getProperty("caminho.1.classpath"),
-					prop.getProperty("caminho.2.classpath")).loadClass(
+			Class<?> lClasse = ClassLoaderExtention.getInstance(lClasspath).loadClass(
 					prop.getProperty("classe." + iterator + ".nome"));
-			
+
 			lClasseConfig.setClasse(lClasse);
 
 			// Recuperar Fields
@@ -103,7 +116,8 @@ public class FileUtil {
 		return getTemplate("template-combo.txt");
 	}
 
-	public static String obterTemplateComponente(ClasseConfig pClasseConfig, CampoConfig pCampoConfig, TipoTemplate pTipoTemplate) {
+	public static String obterTemplateComponente(ClasseConfig pClasseConfig, CampoConfig pCampoConfig,
+			TipoTemplate pTipoTemplate) {
 
 		String template = "componente-" + pTipoTemplate.toString().toLowerCase() + "-";
 
@@ -159,8 +173,8 @@ public class FileUtil {
 		return texto;
 	}
 
-	private static void recuperarListaFields(Properties prop, Integer iterator, ClasseConfig lClasseConfig) throws NoSuchFieldException,
-			SecurityException {
+	private static void recuperarListaFields(Properties prop, Integer iterator, ClasseConfig lClasseConfig)
+			throws NoSuchFieldException, SecurityException {
 
 		int iterator2 = 1;
 		do {
@@ -171,10 +185,14 @@ public class FileUtil {
 
 			CampoConfig lCampo = new CampoConfig();
 			lCampo.setNome(prop.getProperty("classe." + iterator + ".field." + iterator2 + ".nome"));
-			lCampo.setObrigatorioCadastro(Boolean.valueOf(prop.getProperty("classe." + iterator + ".field." + iterator2 + ".obrigatorio.cadastro")));
-			lCampo.setObrigatorioPesquisa(Boolean.valueOf(prop.getProperty("classe." + iterator + ".field." + iterator2 + ".obrigatorio.pesquisa")));
-			lCampo.setTamanho(Integer.valueOf(prop.getProperty("classe." + iterator + ".field." + iterator2 + ".tamanho")));
-			lCampo.setMonetario(Boolean.valueOf(prop.getProperty("classe." + iterator + ".field." + iterator2 + ".monetario")));
+			lCampo.setObrigatorioCadastro(Boolean.valueOf(prop.getProperty("classe." + iterator + ".field." + iterator2
+					+ ".obrigatorio.cadastro")));
+			lCampo.setObrigatorioPesquisa(Boolean.valueOf(prop.getProperty("classe." + iterator + ".field." + iterator2
+					+ ".obrigatorio.pesquisa")));
+			lCampo.setTamanho(Integer.valueOf(prop.getProperty("classe." + iterator + ".field." + iterator2
+					+ ".tamanho")));
+			lCampo.setMonetario(Boolean.valueOf(prop.getProperty("classe." + iterator + ".field." + iterator2
+					+ ".monetario")));
 			lCampo.setField(lClasseConfig.getClasse().getDeclaredField(lCampo.getNome()));
 
 			lClasseConfig.getListCampo().add(lCampo);

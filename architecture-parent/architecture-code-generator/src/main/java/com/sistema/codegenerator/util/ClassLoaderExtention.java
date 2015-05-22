@@ -9,19 +9,19 @@ import java.util.List;
 
 public class ClassLoaderExtention extends ClassLoader {
 
-	public static ClassLoaderExtention getInstance(String... pClassPath) {
-		return new ClassLoaderExtention(ClassLoaderExtention.class.getClassLoader(), pClassPath);
+	public static ClassLoaderExtention getInstance(List<String> lClasspath) {
+		return new ClassLoaderExtention(ClassLoaderExtention.class.getClassLoader(), lClasspath);
 	}
 
 	private List<URL> classPath;
 
-	public ClassLoaderExtention(ClassLoader parent, String... pClassPath) {
+	public ClassLoaderExtention(ClassLoader parent, List<String> lClasspath) {
 
 		super(parent);
 
 		classPath = new ArrayList<>();
 
-		for (String string : pClassPath) {
+		for (String string : lClasspath) {
 			try {
 				classPath.add(new File(string).toURI().toURL());
 			} catch (MalformedURLException e2) {
