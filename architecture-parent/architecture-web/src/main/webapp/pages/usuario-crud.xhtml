@@ -7,94 +7,102 @@
 
 	<ui:define name="define-tabela-padrao">
 
-<p:column headerText="#{label['usuario.crud.campo.nome']}" sortBy="#{item.nome}">
-	<p:outputLabel value="#{item.nome}" />
-</p:column><p:column headerText="#{label['usuario.crud.campo.login']}" sortBy="#{item.login}">
-	<p:outputLabel value="#{item.login}" />
-</p:column><p:column headerText="#{label['usuario.crud.campo.senha']}" sortBy="#{item.senha}">
-	<p:outputLabel value="#{item.senha}" />
-</p:column>
+		<p:column headerText="#{label['usuario.crud.campo.nome']}" sortBy="#{item.nome}">
+			<p:outputLabel value="#{item.nome}" />
+		</p:column>
+		<p:column headerText="#{label['usuario.crud.campo.login']}" sortBy="#{item.login}">
+			<p:outputLabel value="#{item.login}" />
+		</p:column>
+		<p:column headerText="#{label['usuario.crud.campo.senha']}" sortBy="#{item.senha}">
+			<p:outputLabel value="#{item.senha}" />
+		</p:column>
 
 	</ui:define>
 
 	<ui:define name="define-filtros-padrao">
 
-<p:row>
-	<p:column>
-		<p:outputLabel value="#{label['usuario.crud.campo.nome']}" for="usuario_nome_sel" />
-	</p:column>
-	<p:column>
-		<p:inputText id="usuario_nome_sel" value="#{usuarioCrudMB.modelSel.nome}" maxlength="10" required="true"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['usuario.crud.campo.login']}" for="usuario_login_sel" />
-	</p:column>
-	<p:column>
-		<p:inputText id="usuario_login_sel" value="#{usuarioCrudMB.modelSel.login}" maxlength="100" required="false"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['usuario.crud.campo.senha']}" for="usuario_senha_sel" />
-	</p:column>
-	<p:column>
-		<p:inputText id="usuario_senha_sel" value="#{usuarioCrudMB.modelSel.senha}" maxlength="50" required="false"  />
-	</p:column>
-</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['usuario.crud.campo.nome']}" for="usuario_nome_sel" />
+			</p:column>
+			<p:column>
+				<p:inputText id="usuario_nome_sel" value="#{usuarioCrudMB.modelSel.nome}" maxlength="10" required="true" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['usuario.crud.campo.login']}" for="usuario_login_sel" />
+			</p:column>
+			<p:column>
+				<p:inputText id="usuario_login_sel" value="#{usuarioCrudMB.modelSel.login}" maxlength="100" required="false" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['usuario.crud.campo.senha']}" for="usuario_senha_sel" />
+			</p:column>
+			<p:column>
+				<p:inputText id="usuario_senha_sel" value="#{usuarioCrudMB.modelSel.senha}" maxlength="50" required="false" />
+			</p:column>
+		</p:row>
 
 	</ui:define>
 
 	<ui:define name="define-cadastro-padrao">
 
-<p:row>
-	<p:column>
-		<p:outputLabel value="#{label['usuario.crud.campo.nome']}" for="usuario_nome_cad" />
-	</p:column>
-	<p:column>
-		<p:inputText id="usuario_nome_cad" value="#{usuarioCrudMB.modelCad.nome}" maxlength="10" required="true"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['usuario.crud.campo.login']}" for="usuario_login_cad" />
-	</p:column>
-	<p:column>
-		<p:inputText id="usuario_login_cad" value="#{usuarioCrudMB.modelCad.login}" maxlength="100" required="false"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['usuario.crud.campo.senha']}" for="usuario_senha_cad" />
-	</p:column>
-	<p:column>
-		<p:inputText id="usuario_senha_cad" value="#{usuarioCrudMB.modelCad.senha}" maxlength="50" required="true"  />
-	</p:column>
-</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['usuario.crud.campo.nome']}" for="usuario_nome_cad" />
+			</p:column>
+			<p:column>
+				<p:inputText id="usuario_nome_cad" value="#{usuarioCrudMB.modelCad.nome}" maxlength="10" required="true" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['usuario.crud.campo.login']}" for="usuario_login_cad" />
+			</p:column>
+			<p:column>
+				<p:inputText id="usuario_login_cad" value="#{usuarioCrudMB.modelCad.login}" maxlength="100" required="false" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['usuario.crud.campo.senha']}" for="usuario_senha_cad" />
+			</p:column>
+			<p:column>
+				<p:inputText id="usuario_senha_cad" value="#{usuarioCrudMB.modelCad.senha}" maxlength="50" required="true" />
+			</p:column>
+		</p:row>
 
 	</ui:define>
 
 	<ui:define name="define-detalhes-padrao">
 
-<p:row>
-	<p:column>
-		<p:outputLabel value="#{label['usuario.crud.campo.nome']}" for="usuario_nome_det" />
-	</p:column>
-	<p:column>
-		<p:outputLabel id="usuario_nome_det" value="#{usuarioCrudMB.modelCad.nome}"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['usuario.crud.campo.login']}" for="usuario_login_det" />
-	</p:column>
-	<p:column>
-		<p:outputLabel id="usuario_login_det" value="#{usuarioCrudMB.modelCad.login}"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['usuario.crud.campo.senha']}" for="usuario_senha_det" />
-	</p:column>
-	<p:column>
-		<p:outputLabel id="usuario_senha_det" value="#{usuarioCrudMB.modelCad.senha}"  />
-	</p:column>
-</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['usuario.crud.campo.nome']}" for="usuario_nome_det" />
+			</p:column>
+			<p:column>
+				<p:outputLabel id="usuario_nome_det" value="#{usuarioCrudMB.modelCad.nome}" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['usuario.crud.campo.login']}" for="usuario_login_det" />
+			</p:column>
+			<p:column>
+				<p:outputLabel id="usuario_login_det" value="#{usuarioCrudMB.modelCad.login}" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['usuario.crud.campo.senha']}" for="usuario_senha_det" />
+			</p:column>
+			<p:column>
+				<p:outputLabel id="usuario_senha_det" value="#{usuarioCrudMB.modelCad.senha}" />
+			</p:column>
+		</p:row>
 
 	</ui:define>
 

@@ -7,24 +7,30 @@
 
 	<ui:define name="define-tabela-padrao">
 
-<p:column headerText="#{label['produto.tab.campo.codigo']}" sortBy="#{item.codigo}">
-	<p:outputLabel value="#{item.codigo}" />
-</p:column><p:column headerText="#{label['produto.tab.campo.nome']}" sortBy="#{item.nome}">
-	<p:outputLabel value="#{item.nome}" />
-</p:column><p:column headerText="#{label['produto.tab.campo.lucro']}" sortBy="#{item.lucro}">
-	<p:outputLabel value="#{item.lucro}" />
-</p:column><p:column headerText="#{label['produto.tab.campo.valorCusto']}" sortBy="#{item.valorCusto}">
-	<p:outputLabel value="#{item.valorCusto}" />
-</p:column><p:column headerText="#{label['produto.tab.campo.valorVenda']}" sortBy="#{item.valorVenda}">
-	<p:outputLabel value="#{item.valorVenda}" />
-</p:column><p:column headerText="#{label['produto.tab.campo.categoria']}" sortBy="#{item.categoria}">
-	<p:outputLabel value="#{item.categoria.label}" />
-</p:column>
-			<p:column headerText="#{label['produto.tab.campo.quantidadeEstoque']}" sortBy="#{item.quantidadeEstoque}">
-	<p:outputLabel value="#{item.quantidadeEstoque}" />
-</p:column><p:column headerText="#{label['produto.tab.campo.flPreCadastro']}" sortBy="#{item.flPreCadastro}">
-	<p:outputLabel value="#{item.flPreCadastro}" />
-</p:column>
+		<p:column headerText="#{label['produto.tab.campo.codigo']}" sortBy="#{item.codigo}">
+			<p:outputLabel value="#{item.codigo}" />
+		</p:column>
+		<p:column headerText="#{label['produto.tab.campo.nome']}" sortBy="#{item.nome}">
+			<p:outputLabel value="#{item.nome}" />
+		</p:column>
+		<p:column headerText="#{label['produto.tab.campo.lucro']}" sortBy="#{item.lucro}">
+			<p:outputLabel value="#{item.lucro}" />
+		</p:column>
+		<p:column headerText="#{label['produto.tab.campo.valorCusto']}" sortBy="#{item.valorCusto}">
+			<p:outputLabel value="#{item.valorCusto}" />
+		</p:column>
+		<p:column headerText="#{label['produto.tab.campo.valorVenda']}" sortBy="#{item.valorVenda}">
+			<p:outputLabel value="#{item.valorVenda}" />
+		</p:column>
+		<p:column headerText="#{label['produto.tab.campo.categoria']}" sortBy="#{item.categoria}">
+			<p:outputLabel value="#{item.categoria.label}" />
+		</p:column>
+		<p:column headerText="#{label['produto.tab.campo.quantidadeEstoque']}" sortBy="#{item.quantidadeEstoque}">
+			<p:outputLabel value="#{item.quantidadeEstoque}" />
+		</p:column>
+		<p:column headerText="#{label['produto.tab.campo.flPreCadastro']}" sortBy="#{item.flPreCadastro}">
+			<p:outputLabel value="#{item.flPreCadastro}" />
+		</p:column>
 
 	</ui:define>
 
@@ -32,130 +38,145 @@
 
 	<ui:define name="define-cadastro-padrao">
 
-<p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.codigo']}" for="produto_codigo_cad" />
-	</p:column>
-	<p:column>
-		<p:inputText id="produto_codigo_cad" value="#{produtoTabMB.modelCad.codigo}" maxlength="10" required="false"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.nome']}" for="produto_nome_cad" />
-	</p:column>
-	<p:column>
-		<p:inputText id="produto_nome_cad" value="#{produtoTabMB.modelCad.nome}" maxlength="100" required="false"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.lucro']}" for="produto_lucro_cad" />
-	</p:column>
-	<p:column>
-		<p:inputText id="produto_lucro_cad" value="#{produtoTabMB.modelCad.lucro}" maxlength="10" required="false"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.valorCusto']}" for="produto_valorCusto_cad" />
-	</p:column>
-	<p:column>
-		<p:inputText id="produto_valorCusto_cad" value="#{produtoTabMB.modelCad.valorCusto}" maxlength="10" required="false"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.valorVenda']}" for="produto_valorVenda_cad" />
-	</p:column>
-	<p:column>
-		<p:inputText id="produto_valorVenda_cad" value="#{produtoTabMB.modelCad.valorVenda}" maxlength="10" required="false"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.categoria']}" for="produto_categoria_cad" />
-	</p:column>
-	<p:column>
-		<p:selectOneMenu id="produto_categoria_cad" value="#{produtoTabMB.modelCad.categoria.codigo}" required="false" >
-			<f:selectItem itemLabel="#{label['sistema.select.selecione']}" itemValue="#{null}" />
-			<f:selectItems value="#{produtoTabMB.listCategoriaModel}" var="item" itemLabel="#{item.label}" 
-				itemValue="#{item.codigo}" />
-		</p:selectOneMenu>
-	</p:column>
-</p:row>
-<p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.quantidadeEstoque']}" for="produto_quantidadeEstoque_cad" />
-	</p:column>
-	<p:column>
-		<p:inputText id="produto_quantidadeEstoque_cad" value="#{produtoTabMB.modelCad.quantidadeEstoque}" maxlength="10" required="false"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.flPreCadastro']}" for="produto_flPreCadastro_cad" />
-	</p:column>
-	<p:column>
-		<p:inputText id="produto_flPreCadastro_cad" value="#{produtoTabMB.modelCad.flPreCadastro}" maxlength="10" required="false"  />
-	</p:column>
-</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.codigo']}" for="produto_codigo_cad" />
+			</p:column>
+			<p:column>
+				<p:inputText id="produto_codigo_cad" value="#{produtoTabMB.modelCad.codigo}" maxlength="10" required="false" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.nome']}" for="produto_nome_cad" />
+			</p:column>
+			<p:column>
+				<p:inputText id="produto_nome_cad" value="#{produtoTabMB.modelCad.nome}" maxlength="100" required="false" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.lucro']}" for="produto_lucro_cad" />
+			</p:column>
+			<p:column>
+				<p:inputText id="produto_lucro_cad" value="#{produtoTabMB.modelCad.lucro}" maxlength="10" required="false" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.valorCusto']}" for="produto_valorCusto_cad" />
+			</p:column>
+			<p:column>
+				<p:inputText id="produto_valorCusto_cad" value="#{produtoTabMB.modelCad.valorCusto}" maxlength="10" required="false" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.valorVenda']}" for="produto_valorVenda_cad" />
+			</p:column>
+			<p:column>
+				<p:inputText id="produto_valorVenda_cad" value="#{produtoTabMB.modelCad.valorVenda}" maxlength="10" required="false" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.categoria']}" for="produto_categoria_cad" />
+			</p:column>
+			<p:column>
+				<p:selectOneMenu id="produto_categoria_cad" value="#{produtoTabMB.modelCad.categoria.codigo}" required="false">
+					<f:selectItem itemLabel="#{label['sistema.select.selecione']}" itemValue="#{null}" />
+					<f:selectItems value="#{produtoTabMB.listCategoriaModel}" var="item" itemLabel="#{item.label}"
+						itemValue="#{item.codigo}" />
+				</p:selectOneMenu>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.quantidadeEstoque']}" for="produto_quantidadeEstoque_cad" />
+			</p:column>
+			<p:column>
+				<p:inputText id="produto_quantidadeEstoque_cad" value="#{produtoTabMB.modelCad.quantidadeEstoque}" maxlength="10"
+					required="false" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.flPreCadastro']}" for="produto_flPreCadastro_cad" />
+			</p:column>
+			<p:column>
+				<p:inputText id="produto_flPreCadastro_cad" value="#{produtoTabMB.modelCad.flPreCadastro}" maxlength="10"
+					required="false" />
+			</p:column>
+		</p:row>
 
 	</ui:define>
 
 	<ui:define name="define-detalhes-padrao">
 
-<p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.codigo']}" for="produto_codigo_det" />
-	</p:column>
-	<p:column>
-		<p:outputLabel id="produto_codigo_det" value="#{produtoTabMB.modelCad.codigo}"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.nome']}" for="produto_nome_det" />
-	</p:column>
-	<p:column>
-		<p:outputLabel id="produto_nome_det" value="#{produtoTabMB.modelCad.nome}"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.lucro']}" for="produto_lucro_det" />
-	</p:column>
-	<p:column>
-		<p:outputLabel id="produto_lucro_det" value="#{produtoTabMB.modelCad.lucro}"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.valorCusto']}" for="produto_valorCusto_det" />
-	</p:column>
-	<p:column>
-		<p:outputLabel id="produto_valorCusto_det" value="#{produtoTabMB.modelCad.valorCusto}"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.valorVenda']}" for="produto_valorVenda_det" />
-	</p:column>
-	<p:column>
-		<p:outputLabel id="produto_valorVenda_det" value="#{produtoTabMB.modelCad.valorVenda}"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.categoria']}" for="produto_categoria_det" />
-	</p:column>
-	<p:column>
-		<p:outputLabel id="produto_categoria_det"  value="#{produtoTabMB.modelCad.categoria.label}" />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.quantidadeEstoque']}" for="produto_quantidadeEstoque_det" />
-	</p:column>
-	<p:column>
-		<p:outputLabel id="produto_quantidadeEstoque_det" value="#{produtoTabMB.modelCad.quantidadeEstoque}"  />
-	</p:column>
-</p:row><p:row>
-	<p:column>
-		<p:outputLabel value="#{label['produto.tab.campo.flPreCadastro']}" for="produto_flPreCadastro_det" />
-	</p:column>
-	<p:column>
-		<p:outputLabel id="produto_flPreCadastro_det" value="#{produtoTabMB.modelCad.flPreCadastro}"  />
-	</p:column>
-</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.codigo']}" for="produto_codigo_det" />
+			</p:column>
+			<p:column>
+				<p:outputLabel id="produto_codigo_det" value="#{produtoTabMB.modelCad.codigo}" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.nome']}" for="produto_nome_det" />
+			</p:column>
+			<p:column>
+				<p:outputLabel id="produto_nome_det" value="#{produtoTabMB.modelCad.nome}" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.lucro']}" for="produto_lucro_det" />
+			</p:column>
+			<p:column>
+				<p:outputLabel id="produto_lucro_det" value="#{produtoTabMB.modelCad.lucro}" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.valorCusto']}" for="produto_valorCusto_det" />
+			</p:column>
+			<p:column>
+				<p:outputLabel id="produto_valorCusto_det" value="#{produtoTabMB.modelCad.valorCusto}" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.valorVenda']}" for="produto_valorVenda_det" />
+			</p:column>
+			<p:column>
+				<p:outputLabel id="produto_valorVenda_det" value="#{produtoTabMB.modelCad.valorVenda}" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.categoria']}" for="produto_categoria_det" />
+			</p:column>
+			<p:column>
+				<p:outputLabel id="produto_categoria_det" value="#{produtoTabMB.modelCad.categoria.label}" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.quantidadeEstoque']}" for="produto_quantidadeEstoque_det" />
+			</p:column>
+			<p:column>
+				<p:outputLabel id="produto_quantidadeEstoque_det" value="#{produtoTabMB.modelCad.quantidadeEstoque}" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="#{label['produto.tab.campo.flPreCadastro']}" for="produto_flPreCadastro_det" />
+			</p:column>
+			<p:column>
+				<p:outputLabel id="produto_flPreCadastro_det" value="#{produtoTabMB.modelCad.flPreCadastro}" />
+			</p:column>
+		</p:row>
 
 	</ui:define>
 

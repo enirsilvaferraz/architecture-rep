@@ -11,9 +11,8 @@ public class PessoaModel extends ModelAb {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
 
-	private Integer id;
+	private Long codigo;
 
 	private String nome;
 
@@ -34,7 +33,7 @@ public class PessoaModel extends ModelAb {
 
 	public PessoaModel(Integer id, String nome, String login, List<String> email) {
 		super();
-		this.id = id;
+		this.codigo = id;
 		this.nome = nome;
 		this.login = login;
 		this.email = email;
@@ -52,20 +51,12 @@ public class PessoaModel extends ModelAb {
 		this.dia = dia;
 	}
 
-	public Integer getId() {
-		return id;
-	}
-
 	public TipoPessoa getTipo() {
 		return tipo;
 	}
 
 	public void setTipo(TipoPessoa tipo) {
 		this.tipo = tipo;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getNome() {
@@ -115,7 +106,11 @@ public class PessoaModel extends ModelAb {
 
 	@Override
 	public Long getCodigo() {
-		return id.longValue();
+		return codigo;
 	}
 
+	@Override
+	public void setCodigo(Long id) {
+		this.codigo = codigo;
+	}
 }
