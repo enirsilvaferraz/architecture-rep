@@ -11,13 +11,6 @@
 
 	<dependencies>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.sistemas.architecture</groupId> -->
-<!-- 			<artifactId>archtecture-core</artifactId> -->
-<!-- 			<version>1.0</version> -->
-<!-- 			<scope>provided</scope> -->
-<!-- 		</dependency> -->
-
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -34,29 +27,4 @@
 
 	</dependencies>
 
-<!-- 	<build> -->
-<!-- 		<plugins> -->
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 				<artifactId>maven-ejb-plugin</artifactId> -->
-<!-- 				<configuration> -->
-<!-- 					<ejbVersion>3.1</ejbVersion> -->
-<!-- 					<generateClient>true</generateClient> -->
-<!-- 					<clientIncludes> -->
-<!-- 						<clientInclude>**/*.class</clientInclude> -->
-<!-- 					</clientIncludes> -->
-<!-- 					<archive> -->
-<!-- 						<addMavenDescriptor>false</addMavenDescriptor> -->
-<!-- 						<manifest> -->
-<!-- 							<addClasspath>true</addClasspath> -->
-<!-- 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries> -->
-<!-- 							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries> -->
-<!-- 						</manifest> -->
-<!-- 					</archive> -->
-<!-- 				</configuration> -->
-<!-- 			</plugin> -->
-<!-- 		</plugins> -->
-<!-- 	</build> -->
-
-	
 </project>
