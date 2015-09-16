@@ -233,11 +233,7 @@
 	</dependencies>
 
 	<modules>
-		<module>architecture-web</module>
-		<module>architecture-persistence</module>
-		<module>architecture-ear</module>
-		<module>architecture-code-generator</module>
-		<module>architecture-core</module>
-		<module>architecture-auditing</module>
+		<module>architecture-frontcore</module>
+		<module>architecture-backcore</module>
 	</modules>
 </project>
