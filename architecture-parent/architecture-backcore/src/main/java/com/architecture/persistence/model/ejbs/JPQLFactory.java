@@ -1,4 +1,4 @@
-package com.architecture.persistence.model.facedes;
+package com.architecture.persistence.model.ejbs;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

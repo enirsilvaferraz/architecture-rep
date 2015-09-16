@@ -1,10 +1,69 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.sistemas.baseproject</groupId>
-    <artifactId>baseproject-parent</artifactId>
-    <version>0.0.1</version>
-  </parent>
-  <artifactId>baseproject-ear</artifactId>
-  <packaging>ear</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sistemas.baseproject</groupId>
+		<artifactId>baseproject-parent</artifactId>
+		<version>0.0.1</version>
+	</parent>
+	<artifactId>baseproject-ear</artifactId>
+	<packaging>ear</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.sistemas.baseproject</groupId>
+			<artifactId>baseproject-ejb</artifactId>
+			<version>0.0.1</version>
+			<type>ejb</type>
+			<exclusions>
+				<exclusion>
+					<artifactId>*</artifactId>
+					<groupId>*</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.sistemas.baseproject</groupId>
+			<artifactId>baseproject-web</artifactId>
+			<version>0.0.1</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.sistemas.architecture</groupId>
+			<artifactId>architecture-backcore</artifactId>
+			<version>1.0</version>
+			<type>ejb</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>baseproject-ear</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<applicationName>baseproject-ear</applicationName>
+					<includeLibInApplicationXml>true</includeLibInApplicationXml>
+					<modules>
+						<ejbModule>
+							<groupId>com.sistemas.baseproject</groupId>
+							<artifactId>baseproject-ejb</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>com.sistemas.architecture</groupId>
+							<artifactId>architecture-backcore</artifactId>
+						</ejbModule>
+						<webModule>
+							<groupId>com.sistemas.baseproject</groupId>
+							<artifactId>baseproject-web</artifactId>
+							<contextRoot>base</contextRoot>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>

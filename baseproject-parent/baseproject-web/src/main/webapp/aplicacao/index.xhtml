@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui"
+	template="/resources/templates/template-app.xhtml">
+
+	<ui:define name="container-app">
+
+
+		<div class="col-xs-12">
+
+			<div class="page-header">
+				<h3>JSFBootstrap</h3>
+			</div>
+
+		</div>
+
+		<div class="col-xs-12">
+
+			<h:form styleClass="form-horizontal" id="formulario">
+				<div class="form-group">
+					<h:outputLabel for="id" value="Período:"
+						class="col-xs-12 col-sm-offset-1 col-sm-2 col-md-offset-1 col-md-2 control-label" />
+					<div class="col-xs-12 col-sm-8 col-md-8">
+						<h:inputText id="id" value="" class="form-control">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:inputText>
+					</div>
+				</div>
+			</h:form>
+
+		</div>
+
+
+		<div class="col-xs-12">
+
+			<h:dataTable value="#{indexMB.listaString}" var="obj"
+				styleClass="table table-striped table-hover table-condensed table-responsive"
+				columnClasses="visible-sm visible-md visible-lg, ">
+
+				<h:column headerClass="visible-sm visible-md visible-lg">
+					<f:facet name="header">
+						<h:outputText value="Order No1" />
+					</f:facet>
+					<h:outputText value="#{obj}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Order No2" />
+					</f:facet>
+					<h:outputText value="#{obj}" />
+				</h:column>
+			</h:dataTable>
+
+		</div>
+
+
+		<div class="col-xs-12">
+
+			<h:commandButton action="teste" value="Enviar Formulário" styleClass="btn btn-success" />
+
+		</div>
+
+	</ui:define>
+
+</ui:composition>

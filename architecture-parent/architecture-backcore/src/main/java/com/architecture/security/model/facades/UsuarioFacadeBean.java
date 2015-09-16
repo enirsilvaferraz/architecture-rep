@@ -6,7 +6,7 @@ import javax.ejb.TransactionAttributeType;
 import javax.ejb.TransactionManagement;
 import javax.ejb.TransactionManagementType;
 
-import com.architecture.persistence.model.facedes.PersistenceFacadeBean;
+import com.architecture.persistence.model.ejbs.PersistenceFacadeBean;
 
 @Stateless(name = "UsuarioFacade")
 @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
