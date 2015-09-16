@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 
 import com.archtecture.model.entities.ModelAb;
 import com.archtecture.model.enums.TipoOrdenacao;
-import com.archtecture.model.exceptions.NegocioException;
+import com.archtecture.util.exceptions.NegocioException;
 
 @Remote
 public interface PersistenceFacadeLocal {

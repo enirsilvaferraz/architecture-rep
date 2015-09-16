@@ -11,7 +11,7 @@ import javax.persistence.Transient;
 import com.archtecture.model.entities.ModelAb;
 import com.archtecture.model.enums.Mensagem;
 import com.archtecture.model.enums.TipoOrdenacao;
-import com.archtecture.model.exceptions.NegocioException;
+import com.archtecture.util.exceptions.NegocioException;
 
 public final class JPQLFactory {
 

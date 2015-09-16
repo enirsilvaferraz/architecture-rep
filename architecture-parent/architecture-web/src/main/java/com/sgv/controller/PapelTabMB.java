@@ -4,8 +4,8 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
+import com.exemplo.model.entities.PapelModel;
 import com.gerador.auxiliar.PadraoMBImpl;
-import com.sgv.model.entities.PapelModel;
 
 @ViewScoped
 @ManagedBean

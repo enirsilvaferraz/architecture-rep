@@ -11,8 +11,8 @@ import org.primefaces.context.RequestContext;
 import com.architecture.controller.enums.MensagemEnum;
 import com.archtecture.model.entities.ModelAb;
 import com.archtecture.model.enums.TipoOrdenacao;
-import com.archtecture.model.exceptions.NegocioException;
 import com.archtecture.model.facedes.PersistenceFacadeLocal;
+import com.archtecture.util.exceptions.NegocioException;
 
 public abstract class PadraoMBImpl<Model extends ModelAb> implements PadraoMBIf<Model> {
 

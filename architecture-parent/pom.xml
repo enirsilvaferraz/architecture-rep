@@ -234,9 +234,10 @@
 
 	<modules>
 		<module>architecture-web</module>
-		<module>architecture-ejb</module>
+		<module>architecture-persistence</module>
 		<module>architecture-ear</module>
 		<module>architecture-code-generator</module>
 		<module>architecture-core</module>
+		<module>architecture-auditing</module>
 	</modules>
 </project>

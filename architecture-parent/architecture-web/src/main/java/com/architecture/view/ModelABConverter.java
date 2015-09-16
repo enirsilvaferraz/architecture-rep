@@ -8,7 +8,7 @@ import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 
 import com.archtecture.model.entities.ModelAb;
-import com.sgv.model.entities.PapelModel;
+import com.exemplo.model.entities.PapelModel;
 
 @FacesConverter("ModelABConverter")
 public class ModelABConverter implements Converter {
