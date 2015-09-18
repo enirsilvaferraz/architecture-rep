@@ -7,9 +7,9 @@ import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import com.architecture.backcore.exceptions.NegocioException;
 import com.architecture.persistence.model.entities.ModelAb;
 import com.architecture.persistence.model.enums.TipoOrdenacao;
+import com.architecture.util.exceptions.NegocioException;
 
 // @Stateless(name = PersistenceFacadeLocal.JNDI_NAME)
 // @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)

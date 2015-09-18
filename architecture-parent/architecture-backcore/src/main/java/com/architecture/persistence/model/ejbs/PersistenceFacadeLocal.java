@@ -2,13 +2,13 @@ package com.architecture.persistence.model.ejbs;
 
 import java.util.List;
 
-import com.architecture.backcore.exceptions.NegocioException;
 import com.architecture.persistence.model.entities.ModelAb;
 import com.architecture.persistence.model.enums.TipoOrdenacao;
+import com.architecture.util.exceptions.NegocioException;
 
 /**
- * Interface responsável pelo contrato de todos os EJBs da aplicação. Não é necessário extendê-la diretamente,
- * há uma implementação para a mesma disponível em {@link PersistenceFacadeBean}.
+ * Interface responsï¿½vel pelo contrato de todos os EJBs da aplicaï¿½ï¿½o. Nï¿½o ï¿½ necessï¿½rio extendï¿½-la diretamente,
+ * hï¿½ uma implementaï¿½ï¿½o para a mesma disponï¿½vel em {@link PersistenceFacadeBean}.
  * 
  * @author Enir
  *
@@ -22,7 +22,7 @@ interface PersistenceFacadeLocal {
 	final String	JNDI_NAME	= "PersistenceFacade";
 
 	/**
-	 * Método usado para atualização de uma entidade no banco de dados.
+	 * Mï¿½todo usado para atualizaï¿½ï¿½o de uma entidade no banco de dados.
 	 * 
 	 * @param pModel
 	 *            modelo a ser atualizado
@@ -33,7 +33,7 @@ interface PersistenceFacadeLocal {
 	<Model extends ModelAb> Model atualizar(Model pModel) throws NegocioException;
 
 	/**
-	 * Método usado para buscar um modelo com base no código
+	 * Mï¿½todo usado para buscar um modelo com base no cï¿½digo
 	 * 
 	 * @param pModel
 	 *            modelo a ser carregado
@@ -44,20 +44,20 @@ interface PersistenceFacadeLocal {
 	<Model extends ModelAb> Model carregar(Model pModel) throws NegocioException;
 
 	/**
-	 * Método usado para remover um modelo da base de dados.
+	 * Mï¿½todo usado para remover um modelo da base de dados.
 	 * 
 	 * @param pModel
-	 *            modelo a ser excluído
+	 *            modelo a ser excluï¿½do
 	 * @throws NegocioException
 	 *             [NENUM]
 	 */
 	<Model extends ModelAb> void excluir(Model pModel) throws NegocioException;
 
 	/**
-	 * Método usado para persistir um modelo no banco de dados
+	 * Mï¿½todo usado para persistir um modelo no banco de dados
 	 * 
 	 * @param pModel
-	 *            modelo para inserção
+	 *            modelo para inserï¿½ï¿½o
 	 * @throws NegocioException
 	 *             ERRO_ENTIDADE_COM_CODIGO
 	 * @return modelo inserido
@@ -65,7 +65,7 @@ interface PersistenceFacadeLocal {
 	<Model extends ModelAb> Model inserir(Model pModel) throws NegocioException;
 
 	/**
-	 * Método usado para realizar uma pesquisa com base nos atributos de um
+	 * Mï¿½todo usado para realizar uma pesquisa com base nos atributos de um
 	 * determinado modelo
 	 * 
 	 * @param pModel
@@ -78,16 +78,16 @@ interface PersistenceFacadeLocal {
 			String... atributosOrdenacao) throws NegocioException;
 
 	/**
-	 * Método usado para realizar uma pesquisa com base nos atributos de um
+	 * Mï¿½todo usado para realizar uma pesquisa com base nos atributos de um
 	 * determinado modelo
 	 * 
 	 * @param pModel
 	 *            modelo a ser pesquisado
 	 * @param pCollectionsName
-	 *            coleção de nomes de metodos para inicialização
+	 *            coleï¿½ï¿½o de nomes de metodos para inicializaï¿½ï¿½o
 	 * @throws NegocioException
 	 *             ERRO_GERAL, ERRO_MULTIPLOS_RESULTADOS_NA_PESQUISA_UNICA
-	 * @return Resultado único
+	 * @return Resultado ï¿½nico
 	 */
 	<Model extends ModelAb> Model pesquisarUnico(Model pModel, String... pCollectionsName) throws NegocioException;
 

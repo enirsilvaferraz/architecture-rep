@@ -1,4 +1,4 @@
-package com.architecture.backcore.exceptions;
+package com.architecture.util.exceptions;
 
 import javax.ejb.EJBTransactionRolledbackException;
 import javax.persistence.PersistenceException;

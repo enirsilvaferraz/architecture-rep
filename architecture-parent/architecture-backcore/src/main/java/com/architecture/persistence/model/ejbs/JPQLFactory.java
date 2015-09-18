@@ -8,21 +8,21 @@ import java.util.Date;
 
 import javax.persistence.Transient;
 
-import com.architecture.backcore.exceptions.NegocioException;
 import com.architecture.persistence.model.entities.ModelAb;
 import com.architecture.persistence.model.enums.TipoOrdenacao;
+import com.architecture.util.exceptions.NegocioException;
 
 final class JPQLFactory {
 
 	/**
-	 * Método usado para realizar a montagem da parte da connsulta JPQL
-	 * referente a associação
+	 * Mï¿½todo usado para realizar a montagem da parte da connsulta JPQL
+	 * referente a associaï¿½ï¿½o
 	 * 
 	 * @param nomeObjeto
 	 *            nome do objeto principal da consulta
 	 * @param jpqlAssociacao
 	 *            StringBuilder para montagem da parte da consulta referente as
-	 *            associações
+	 *            associaï¿½ï¿½es
 	 * @param field
 	 *            atributo do ovbjeto
 	 * @param nomeObjetoAb
@@ -86,12 +86,12 @@ final class JPQLFactory {
 	}
 
 	/**
-	 * Método usado na montagem do corpo da consulta (SELECT)
+	 * Mï¿½todo usado na montagem do corpo da consulta (SELECT)
 	 * 
 	 * @param pModel
 	 *            Objeto principal da consulta
 	 * @param nomeObjeto
-	 *            nome padrão para esse objeto
+	 *            nome padrï¿½o para esse objeto
 	 * @param jpqlPrincipal
 	 *            StringBuilder para montagem da parte da consulta referente ao
 	 *            corpo principal
@@ -186,7 +186,7 @@ final class JPQLFactory {
 	}
 
 	/**
-	 * Métod usado para inserir uma condição LIKE de pesquisa
+	 * Mï¿½tod usado para inserir uma condiï¿½ï¿½o LIKE de pesquisa
 	 * 
 	 * @param jpqlWhere
 	 *            para montagem da parte da consulta referente as clausulas
@@ -196,7 +196,7 @@ final class JPQLFactory {
 	 * @param nomefield
 	 *            nome do campo em uso
 	 * @param valor
-	 *            valor da variável
+	 *            valor da variï¿½vel
 	 */
 	private static void inserirParametroClausulaLike(StringBuilder jpqlWhere, String nomeObjeto, String nomefield,
 			Object valor) {
@@ -208,7 +208,7 @@ final class JPQLFactory {
 	}
 
 	/**
-	 * Métod usado para inserir uma condição genérica de pesquisa
+	 * Mï¿½tod usado para inserir uma condiï¿½ï¿½o genï¿½rica de pesquisa
 	 * 
 	 * @param jpqlWhere
 	 *            para montagem da parte da consulta referente as clausulas
@@ -218,7 +218,7 @@ final class JPQLFactory {
 	 * @param nomefield
 	 *            nome do campo em uso
 	 * @param valor
-	 *            valor da variável
+	 *            valor da variï¿½vel
 	 */
 	private static void inserirParametroGenerico(StringBuilder jpqlWhere, String nomeObjeto, String nomefield,
 			Object valor) {
@@ -228,7 +228,7 @@ final class JPQLFactory {
 	}
 
 	/**
-	 * Métod usado para inserir uma condição de DATE de pesquisa
+	 * Mï¿½tod usado para inserir uma condiï¿½ï¿½o de DATE de pesquisa
 	 * 
 	 * @param jpqlWhere
 	 *            para montagem da parte da consulta referente as clausulas
@@ -238,7 +238,7 @@ final class JPQLFactory {
 	 * @param nomefield
 	 *            nome do campo em uso
 	 * @param valor
-	 *            valor da variável
+	 *            valor da variï¿½vel
 	 */
 	private static void inserirParametroData(StringBuilder jpqlWhere, String nomeObjeto, String nomefield, Date valor) {
 
@@ -314,7 +314,7 @@ final class JPQLFactory {
 	}
 
 	/**
-	 * Método usado para obter o valor a partir de um field
+	 * Mï¿½todo usado para obter o valor a partir de um field
 	 * 
 	 * @throws NegocioException
 	 *             ERRO_GERAL
@@ -331,7 +331,7 @@ final class JPQLFactory {
 	}
 
 	/**
-	 * Método usado para obter o valor a partir de um nome de field
+	 * Mï¿½todo usado para obter o valor a partir de um nome de field
 	 * 
 	 * @throws NegocioException
 	 *             ERRO_GERAL
